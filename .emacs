@@ -11,6 +11,10 @@
 (show-paren-mode t)
 
 
+;; tabs
+(tabbar-mode 1)
+
+
 ;; speed bar
 (speedbar 1)
 
