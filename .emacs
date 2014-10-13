@@ -15,6 +15,10 @@
 (show-paren-mode t)
 
 
+;; line numbers
+(global-linum-mode t)
+
+
 ;; tabs
 (require 'tabbar)
 (tabbar-mode t)
