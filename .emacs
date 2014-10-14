@@ -11,6 +11,10 @@
 (global-set-key [f5] 'compile)
 
 
+;; disable mouse whell scroll accel
+(setq mouse-wheel-progressive-speed nil)
+
+
 ;; paren matching on
 (show-paren-mode t)
 
@@ -44,3 +48,4 @@
     (add-to-list 'ac-dictionary-directories "/usr/share/auto-complete/dict/")
     (require 'auto-complete-config)
     (ac-config-default)
+
