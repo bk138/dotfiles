@@ -1,5 +1,11 @@
 
 ;
+; theme, load before everything else
+;
+(load-theme 'tango-dark)
+
+
+;
 ; Convenient package handling in emacs
 ;
 (require 'package)
@@ -32,11 +38,6 @@ Usage: (package-require 'package)"
 
 
 ;
-; theme
-;
-(load-theme 'tango-dark)
-
-;
 ; set f5 hotkey to invoke make
 ;
 (global-set-key [f5] 'compile)
@@ -52,6 +53,12 @@ Usage: (package-require 'package)"
 ; paren matching on
 ;
 (show-paren-mode t)
+
+
+;
+; set indentation
+;
+(setq c-basic-offset 4)
 
 
 ;
