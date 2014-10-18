@@ -10,6 +10,13 @@
 ;
 (require 'package)
 
+;; use packages from marmalade
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; and the old elpa repo
+(add-to-list 'package-archives '("elpa-old" . "http://tromey.com/elpa/"))
+;; and automatically parsed versiontracking repositories.
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+
 ;; Make sure a package is installed
 (defun package-require (package)
   "Install a PACKAGE unless it is already installed 
@@ -89,6 +96,7 @@ Usage: (package-require 'package)"
 (setq minimap-update-delay 0)
 (setq minimap-width-fraction 0.05)
 (setq minimap-window-location (quote right))
+(setq minimap-minimum-width 25)
 
 
 ;
