@@ -35,7 +35,7 @@ Usage: (package-require 'package)"
 (package-initialize)  
 ;; package init not needed, since it is done anyway in emacs 24 after reading the init
 ;; but we have to load the list of available packages
-(package-refresh-contents)
+;; (package-refresh-contents)
 
 
 ;
@@ -74,6 +74,17 @@ Usage: (package-require 'package)"
 (global-linum-mode t)
 
 
+
+;; Highlight TODO and FIXME in comments 
+(package-require 'fic-ext-mode)
+(defun add-something-to-mode-hooks (mode-list something)
+  "helper function to add a callback to multiple hooks"
+  (dolist (mode mode-list)
+    (add-hook (intern (concat (symbol-name mode) "-mode-hook")) something)))
+
+(add-something-to-mode-hooks '(c c++ tcl emacs-lisp python text markdown latex) 'fic-ext-mode)
+
+
 ;
 ; tabs
 ;
@@ -88,6 +99,7 @@ Usage: (package-require 'package)"
 (global-set-key  [f8] 'speedbar-get-focus)
 
 
+
 ; minimap 
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/minimap-1.2/")
 ;
@@ -97,6 +109,7 @@ Usage: (package-require 'package)"
 (setq minimap-width-fraction 0.05)
 (setq minimap-window-location (quote right))
 (setq minimap-minimum-width 25)
+
 
 
 ;
@@ -111,6 +124,8 @@ Usage: (package-require 'package)"
 ;
 (require 'saveplace)
 (setq-default save-place t)
+
+
 
 ;
 ; show recent files
@@ -128,3 +143,10 @@ Usage: (package-require 'package)"
     (require 'auto-complete-config)
     (ac-config-default)
 
+
+
+;
+; flycheck syntax checker
+;
+(package-require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
