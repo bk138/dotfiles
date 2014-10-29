@@ -1,11 +1,5 @@
 
 ;
-; theme, load before everything else
-;
-(load-theme 'tango-dark)
-
-
-;
 ; Convenient package handling in emacs
 ;
 (require 'package)
@@ -35,7 +29,18 @@ Usage: (package-require 'package)"
 (package-initialize)  
 ;; package init not needed, since it is done anyway in emacs 24 after reading the init
 ;; but we have to load the list of available packages
-;; (package-refresh-contents)
+(package-refresh-contents)
+
+
+;
+; theme accroding to day/night
+;
+(setq calendar-location-name "Berlin") 
+(setq calendar-latitude 52.30)
+(setq calendar-longitude 13.25)
+(package-require 'theme-changer)
+(change-theme 'tango 'tango-dark)
+
 
 
 ;
@@ -150,3 +155,9 @@ Usage: (package-require 'package)"
 ;
 (package-require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+
+
+
+
