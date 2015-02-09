@@ -93,7 +93,7 @@ Usage: (package-require 'package)"
 ;
 ; tabs
 ;
-(require 'tabbar)
+(package-require 'tabbar)
 (tabbar-mode t)
 
 
@@ -127,7 +127,7 @@ Usage: (package-require 'package)"
 ;
 ; If I reopen a file, I want to start at the line at which I was when I closed it.
 ;
-(require 'saveplace)
+(package-require 'saveplace)
 (setq-default save-place t)
 
 
