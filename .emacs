@@ -29,7 +29,8 @@ Usage: (package-require 'package)"
 (package-initialize)  
 ;; package init not needed, since it is done anyway in emacs 24 after reading the init
 ;; but we have to load the list of available packages
-(package-refresh-contents)
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
 
 ;
