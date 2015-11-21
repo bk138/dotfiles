@@ -106,17 +106,6 @@ Usage: (package-require 'package)"
 
 
 
-; minimap 
-;;(add-to-list 'load-path "~/.emacs.d/elpa/minimap-1.2/")
-;
-(package-require 'minimap)
-(minimap-mode 1)
-(setq minimap-update-delay 0)
-(setq minimap-width-fraction 0.05)
-(setq minimap-window-location (quote right))
-(setq minimap-minimum-width 25)
-
-
 
 ;
 ; go to the last change. sweet!
