@@ -9,7 +9,7 @@
 ;; and the old elpa repo
 (add-to-list 'package-archives '("elpa-old" . "http://tromey.com/elpa/"))
 ;; and automatically parsed versiontracking repositories.
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 ;; Make sure a package is installed
 (defun package-require (package)
@@ -145,6 +145,7 @@ Usage: (package-require 'package)"
 ;
 (package-require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
 
 
 
