@@ -51,6 +51,13 @@ Usage: (package-require 'package)"
 
 
 ;
+; start maximized
+;
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+
+;
 ; set f5 hotkey to invoke make
 ;
 (global-set-key [f5] 'compile)
