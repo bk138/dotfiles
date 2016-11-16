@@ -99,12 +99,14 @@ Usage: (package-require 'package)"
 
 
 ;
-; open a new speedbar frame if there isn't one already
+; use same frame speedbar on the left
 ;
-(speedbar-frame-mode 1)
-(global-set-key  [f8] 'speedbar-get-focus)
-
-
+(package-require 'sr-speedbar)
+(setq speedbar-show-unknown-files t) ; show all files
+(setq speedbar-use-images nil) ; use text for buttons
+(setq sr-speedbar-right-side nil) ; put on left side
+(setq sr-speedbar-width 15)
+(sr-speedbar-open)
 
 
 ;
