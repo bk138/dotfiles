@@ -149,13 +149,17 @@ Usage: (package-require 'package)"
 
 
 ;
-; autocompletion from debian
+; autocompletion
 ;
-(package-require 'auto-complete)
-    (add-to-list 'ac-dictionary-directories "/usr/share/auto-complete/dict/")
-    (require 'auto-complete-config)
-    (ac-config-default)
-
+(package-require 'company)
+(package-require 'company-irony) ; for C
+(global-company-mode 1)
+(defun complete-or-indent ()
+  (interactive)
+  (if (company-manual-begin)
+      (company-complete-common)
+    (indent-according-to-mode)))
+(global-set-key "\t" 'complete-or-indent) ; tab to complete or indent
 
 
 ;
