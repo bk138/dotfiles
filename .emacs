@@ -87,8 +87,17 @@ Usage: (package-require 'package)"
 (global-linum-mode t)
 
 
+;
+; shwo changes on the fly
+;
+(package-require 'diff-hl)
+(global-diff-hl-mode 1)
+(diff-hl-flydiff-mode 1)
 
-;; Highlight TODO and FIXME in comments 
+
+;
+; Highlight TODO and FIXME in comments 
+;
 (package-require 'fic-ext-mode)
 (defun add-something-to-mode-hooks (mode-list something)
   "helper function to add a callback to multiple hooks"
@@ -154,8 +163,6 @@ Usage: (package-require 'package)"
 ;
 (package-require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
-
 
 
 
