@@ -9,7 +9,7 @@
 ;; and the old elpa repo
 (add-to-list 'package-archives '("elpa-old" . "http://tromey.com/elpa/"))
 ;; and automatically parsed versiontracking repositories.
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; Make sure a package is installed
 (defun package-require (package)
