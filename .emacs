@@ -154,12 +154,12 @@ Usage: (package-require 'package)"
 (package-require 'company)
 (package-require 'company-irony) ; for C
 (global-company-mode 1)
-(defun complete-or-indent ()
-  (interactive)
-  (if (company-manual-begin)
-      (company-complete-common)
-    (indent-according-to-mode)))
-(global-set-key "\t" 'complete-or-indent) ; tab to complete or indent
+(defun indent-or-complete ()
+    (interactive)
+    (if (looking-at "\\_>")
+        (company-complete-common)
+      (indent-according-to-mode)))
+(global-set-key "\t" 'indent-or-complete) ; tab to complete or indent
 
 
 ;
