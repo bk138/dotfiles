@@ -169,6 +169,14 @@ Usage: (package-require 'package)"
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
-
-
+;
+; objc-mode tweaks
+;
+(add-to-list 'auto-mode-alist '("\\.m" . objc-mode))
+(add-to-list 'magic-mode-alist
+                `(,(lambda ()
+                     (and (string= (file-name-extension buffer-file-name) "h")
+                          (re-search-forward "@\\<interface\\>" 
+		         magic-mode-regexp-match-limit t)))
+                  . objc-mode))
 
