@@ -203,4 +203,7 @@ Usage: (package-require 'package)"
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 
-
+;
+; markdown
+;
+(package-require 'markdown-mode)
