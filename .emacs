@@ -208,3 +208,10 @@ Usage: (package-require 'package)"
 ; markdown
 ;
 (package-require 'markdown-mode)
+
+
+;
+; YAML
+;
+(package-require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
