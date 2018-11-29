@@ -133,6 +133,7 @@ Usage: (package-require 'package)"
 (setq speedbar-show-unknown-files t) ; show all files
 (setq speedbar-use-images nil) ; use text for buttons
 (setq sr-speedbar-right-side nil) ; put on left side
+(add-hook 'speedbar-mode-hook (lambda () (linum-mode -1))) ; no line numbers
 (setq sr-speedbar-width 15)
 (sr-speedbar-open)
 
