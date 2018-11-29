@@ -186,7 +186,12 @@ Usage: (package-require 'package)"
 ;
 ; objc-mode tweaks
 ;
-(add-to-list 'auto-mode-alist '("\\.m" . objc-mode))
+(add-to-list 'magic-mode-alist
+                `(,(lambda ()
+                     (and (string= (file-name-extension buffer-file-name) "m")
+                          (re-search-forward "@\\<interface\\>" 
+		         magic-mode-regexp-match-limit t)))
+                  . objc-mode))
 (add-to-list 'magic-mode-alist
                 `(,(lambda ()
                      (and (string= (file-name-extension buffer-file-name) "h")
