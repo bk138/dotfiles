@@ -184,6 +184,17 @@ Usage: (package-require 'package)"
 
 
 ;
+; make autocompletion and flycheck work much better for CMake-based projects
+;
+(package-require 'cpputils-cmake)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (if (derived-mode-p 'c-mode 'c++-mode)
+                (cppcm-reload-all)
+              )))
+
+
+;
 ; objc-mode tweaks
 ;
 (add-to-list 'magic-mode-alist
