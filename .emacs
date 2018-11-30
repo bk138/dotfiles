@@ -51,10 +51,12 @@ Usage: (package-require 'package)"
 
 
 ;
-; start maximized
+; start maximized, no toolbar
 ;
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(tool-bar-mode nil)
+)
 
 
 ;
