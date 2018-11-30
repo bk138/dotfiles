@@ -137,6 +137,16 @@ Usage: (package-require 'package)"
 (setq speedbar-directory-unshown-regexp "^$") ; show hidden files as well
 (setq sr-speedbar-width 15)
 (sr-speedbar-open)
+;; avoid accidently deleting window
+(defadvice delete-other-windows (after my-sr-speedbar-delete-other-window-advice activate)
+  "Check whether we are in speedbar, if it is, jump to next window."
+  (let ()
+    (when (and (sr-speedbar-window-exist-p sr-speedbar-window)
+               (eq sr-speedbar-window (selected-window)))
+      (other-window 1)
+    )))
+(ad-enable-advice 'delete-other-windows 'after 'my-sr-speedbar-delete-other-window-advice)
+(ad-activate 'delete-other-windows)
 
 
 ;
