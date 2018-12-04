@@ -3,12 +3,6 @@
 ; Convenient package handling in emacs
 ;
 (require 'package)
-
-;; use packages from marmalade
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-;; and the old elpa repo
-(add-to-list 'package-archives '("elpa-old" . "http://tromey.com/elpa/"))
-;; and automatically parsed versiontracking repositories.
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; Make sure a package is installed
