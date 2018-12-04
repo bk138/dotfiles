@@ -102,6 +102,12 @@ Usage: (package-require 'package)"
 
 
 ;
+; delete to trash
+;
+(setq delete-by-moving-to-trash t)
+
+
+;
 ; shwo changes on the fly
 ;
 (package-require 'diff-hl)
