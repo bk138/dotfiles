@@ -37,6 +37,12 @@ Usage: (package-require 'package)"
 (change-theme 'tango 'tango-dark)
 
 
+;
+; highlight doxygen comments
+;
+(package-require 'highlight-doxygen)
+(highlight-doxygen-global-mode 1)
+
 
 ;
 ; no startscreen
