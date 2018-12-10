@@ -144,6 +144,7 @@ Usage: (package-require 'package)"
 (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1))) ; no line numbers
 (setq speedbar-directory-unshown-regexp "^$") ; show hidden files as well
 (setq sr-speedbar-width 15)
+(setq sr-speedbar-skip-other-window-p t)
 (sr-speedbar-open)
 ;; avoid accidently deleting window
 (defadvice delete-other-windows (after my-sr-speedbar-delete-other-window-advice activate)
