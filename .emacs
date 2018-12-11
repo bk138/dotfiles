@@ -45,6 +45,13 @@ Usage: (package-require 'package)"
 
 
 ;
+; highlight numbers
+;
+(package-require 'highlight-numbers)
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+
+
+;
 ; no startscreen
 ;
 (setq inhibit-startup-message t)
