@@ -194,6 +194,9 @@ Usage: (package-require 'package)"
 ;
 (package-require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(package-require 'flycheck-pos-tip)
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
 
 
 ;
