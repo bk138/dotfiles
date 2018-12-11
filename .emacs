@@ -118,14 +118,8 @@ Usage: (package-require 'package)"
 ;
 ; Highlight TODO and FIXME in comments 
 ;
-(package-require 'fic-ext-mode)
-(defun add-something-to-mode-hooks (mode-list something)
-  "helper function to add a callback to multiple hooks"
-  (dolist (mode mode-list)
-    (add-hook (intern (concat (symbol-name mode) "-mode-hook")) something)))
-
-(add-something-to-mode-hooks '(c c++ tcl emacs-lisp python text markdown latex) 'fic-ext-mode)
-
+(package-require 'hl-todo)
+(global-hl-todo-mode)
 
 ;
 ; tabs
