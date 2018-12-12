@@ -238,11 +238,19 @@ Usage: (package-require 'package)"
 ;
 ; web editing tweaks
 ;
-
 (package-require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+;
+; JavaScript
+;
+(package-require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; Better imenu
+(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
 
 
 ;
