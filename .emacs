@@ -123,6 +123,10 @@ Usage: (package-require 'package)"
 (global-diff-hl-mode 1)
 (diff-hl-flydiff-mode 1)
 
+;
+; auto-refresh all buffers when files have changed on disk
+;
+(global-auto-revert-mode t)
 
 ;
 ; Highlight TODO and FIXME in comments 
