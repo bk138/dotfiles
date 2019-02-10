@@ -107,7 +107,7 @@ Usage: (package-require 'package)"
 ;
 ; line numbers
 ;
-(global-linum-mode t)
+(add-hook 'prog-mode-hook 'linum-mode)
 
 
 ;
