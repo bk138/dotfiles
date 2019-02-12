@@ -142,28 +142,13 @@ Usage: (package-require 'package)"
 
 
 ;
-; use same frame speedbar on the left
+; use treemacs on the left
 ;
-(package-require 'sr-speedbar)
-(setq speedbar-show-unknown-files t) ; show all files
-(setq speedbar-use-images nil) ; use text for buttons
-(setq sr-speedbar-right-side nil) ; put on left side
-(add-hook 'speedbar-mode-hook (lambda () (linum-mode -1))) ; no line numbers
-(setq speedbar-directory-unshown-regexp "^$") ; show hidden files as well
-(setq sr-speedbar-width 15)
-(setq sr-speedbar-max-width 15)
-(setq sr-speedbar-skip-other-window-p t)
-(sr-speedbar-open)
-;; avoid accidently deleting window
-(defadvice delete-other-windows (after my-sr-speedbar-delete-other-window-advice activate)
-  "Check whether we are in speedbar, if it is, jump to next window."
-  (let ()
-    (when (and (sr-speedbar-window-exist-p sr-speedbar-window)
-               (eq sr-speedbar-window (selected-window)))
-      (other-window 1)
-    )))
-(ad-enable-advice 'delete-other-windows 'after 'my-sr-speedbar-delete-other-window-advice)
-(ad-activate 'delete-other-windows)
+(package-require 'treemacs)
+(define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
+(treemacs-git-mode 'simple)
+(treemacs-tag-follow-mode t)
+(treemacs)
 
 
 ;
