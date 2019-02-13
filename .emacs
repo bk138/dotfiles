@@ -94,7 +94,9 @@ Usage: (package-require 'package)"
 ; paren matching on
 ;
 (show-paren-mode t)
-
+; and also surrounding ones ;-)
+(package-require 'highlight-parentheses)
+(add-hook 'prog-mode-hook 'highlight-parentheses-mode)
 
 ;
 ; set indentation
