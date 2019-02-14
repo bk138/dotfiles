@@ -65,6 +65,11 @@ Usage: (package-require 'package)"
  '(tool-bar-mode nil)
 )
 
+;
+; hide menubar per default, make toggable
+;
+(global-set-key (kbd "<f12>") 'menu-bar-mode)
+(menu-bar-mode -1)
 
 ;
 ; set f5 hotkey to invoke make
