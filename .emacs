@@ -173,9 +173,7 @@ Usage: (package-require 'package)"
 ;
 ; If I reopen a file, I want to start at the line at which I was when I closed it.
 ;
-(package-require 'saveplace)
-(setq-default save-place t)
-
+(save-place-mode 1)
 
 
 ;
