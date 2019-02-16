@@ -155,6 +155,7 @@ Usage: (package-require 'package)"
 (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
 (treemacs-git-mode 'simple)
 (treemacs-tag-follow-mode t)
+(treemacs-follow-mode t)
 (treemacs)
 
 
