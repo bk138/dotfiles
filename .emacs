@@ -153,6 +153,9 @@ Usage: (package-require 'package)"
 ;
 (package-require 'treemacs)
 (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
+; make scrolling activate the treemacs window so the follow modes don't reset the position all the time
+(define-key treemacs-mode-map [mouse-4] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
+(define-key treemacs-mode-map [mouse-5] (lambda () (interactive) (treemacs-select-window) (scroll-up 5)))
 (treemacs-git-mode 'simple)
 (treemacs-tag-follow-mode t)
 (treemacs-follow-mode t)
