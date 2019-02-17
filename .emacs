@@ -60,10 +60,10 @@ Usage: (package-require 'package)"
 ;
 ; start maximized, no toolbar
 ;
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(tool-bar-mode nil)
-)
+(tool-bar-mode -1)
+(setq initial-frame-alist '( (fullscreen . maximized)))
+
+
 
 ;
 ; hide menubar per default, make toggable
