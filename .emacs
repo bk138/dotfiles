@@ -69,7 +69,8 @@ Usage: (package-require 'package)"
 ; hide menubar per default, make toggable
 ;
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
-(menu-bar-mode -1)
+(unless (string-equal system-type "darwin")
+  (menu-bar-mode -1))
 
 ;
 ; set f5 hotkey to invoke make
