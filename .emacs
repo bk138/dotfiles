@@ -35,6 +35,8 @@ Usage: (package-require 'package)"
 (setq calendar-longitude 13.25)
 (package-require 'theme-changer)
 (change-theme 'tango 'tango-dark)
+; disable native scroll, annoying on dark theme
+(scroll-bar-mode -1)
 
 
 ;
