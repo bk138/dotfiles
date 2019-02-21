@@ -167,7 +167,11 @@ Usage: (package-require 'package)"
 (tabbar-mode t)
 
 
-
+;
+; which-key
+;
+(package-require 'which-key)
+(which-key-mode)
 
 ;
 ; use treemacs on the left
