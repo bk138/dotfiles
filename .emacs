@@ -184,8 +184,8 @@ Usage: (package-require 'package)"
       (define-key treemacs-mode-map [mouse-4] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
       (define-key treemacs-mode-map [mouse-5] (lambda () (interactive) (treemacs-select-window) (scroll-up 5))))
   (progn
-    (define-key treemacs-mode-map [<wheel-down>] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
-    (define-key treemacs-mode-map [<wheel-up>] (lambda () (interactive) (treemacs-select-window) (scroll-up 5)))
+    (define-key treemacs-mode-map [wheel-down] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
+    (define-key treemacs-mode-map [wheel-up] (lambda () (interactive) (treemacs-select-window) (scroll-up 5)))
     ))
 (treemacs-git-mode 'simple)
 (treemacs-tag-follow-mode t)
