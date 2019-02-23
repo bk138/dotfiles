@@ -134,6 +134,14 @@ Usage: (package-require 'package)"
 (global-diff-hl-mode 1)
 (diff-hl-flydiff-mode 1)
 
+
+;
+; use magit
+;
+(package-require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+
+
 ;
 ; auto-refresh all buffers when files have changed on disk
 ;
