@@ -187,6 +187,7 @@ Usage: (package-require 'package)"
 ; use treemacs on the left
 ;
 (package-require 'treemacs)
+(package-require 'treemacs-magit)
 (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
 ; make scrolling activate the treemacs window so the follow modes don't reset the position all the time
 (if (string-equal system-type "gnu/linux") ; linux
