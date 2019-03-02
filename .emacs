@@ -33,8 +33,10 @@ Usage: (package-require 'package)"
 (setq calendar-location-name "Berlin") 
 (setq calendar-latitude 52.30)
 (setq calendar-longitude 13.25)
-(package-require 'theme-changer)
-(change-theme 'tango 'tango-dark)
+(package-require 'circadian)
+(setq circadian-themes '((:sunrise . tango)
+			 (:sunset  . tango-dark)))
+(circadian-setup)
 ; disable native scroll, annoying on dark theme
 (scroll-bar-mode -1)
 
