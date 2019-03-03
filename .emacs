@@ -36,6 +36,15 @@ Usage: (package-require 'package)"
 (package-require 'circadian)
 (setq circadian-themes '((:sunrise . tango)
 			 (:sunset  . tango-dark)))
+(add-hook 'circadian-after-load-theme-hook
+          #'(lambda (theme)
+	      (if (circadian-a-earlier-b-p (circadian-now-time) (circadian-sunset))
+		  (progn
+		    (message "setting day theme")
+		    )
+		(progn
+		  (message "setting night theme")
+		  ))))
 (circadian-setup)
 ; disable native scroll, annoying on dark theme
 (scroll-bar-mode -1)
