@@ -28,6 +28,29 @@ Usage: (package-require 'package)"
 
 
 ;
+; tabs, https://amitp.blogspot.com/2018/10/emacs-prettier-tabbar.html
+;
+(package-require 'tabbar)
+(customize-set-variable 'tabbar-separator '(1))
+(set-face-attribute 'tabbar-default nil
+                    :background "gray"
+                    :foreground "gray60"
+                    :distant-foreground "gray50"
+                    :box nil)
+(set-face-attribute 'tabbar-unselected nil
+        :foreground "black" :box nil)
+(set-face-attribute 'tabbar-modified nil
+        :foreground "red4" :box nil
+        :inherit 'tabbar-unselected)
+(set-face-attribute 'tabbar-selected nil
+        :background "#4090c0" :foreground "white" :box nil)
+(set-face-attribute 'tabbar-selected-modified nil
+        :inherit 'tabbar-selected :foreground "GoldenRod2" :box nil)
+(set-face-attribute 'tabbar-button nil
+        :box nil)
+(tabbar-mode t)
+
+;
 ; theme accroding to day/night
 ;
 (setq calendar-location-name "Berlin") 
@@ -163,29 +186,6 @@ Usage: (package-require 'package)"
 ;
 (package-require 'hl-todo)
 (global-hl-todo-mode)
-
-;
-; tabs, https://amitp.blogspot.com/2018/10/emacs-prettier-tabbar.html
-;
-(package-require 'tabbar)
-(customize-set-variable 'tabbar-separator '(1))
-(set-face-attribute 'tabbar-default nil
-                    :background "gray"
-                    :foreground "gray60"
-                    :distant-foreground "gray50"
-                    :box nil)
-(set-face-attribute 'tabbar-unselected nil
-        :foreground "black" :box nil)
-(set-face-attribute 'tabbar-modified nil
-        :foreground "red4" :box nil
-        :inherit 'tabbar-unselected)
-(set-face-attribute 'tabbar-selected nil
-        :background "#4090c0" :foreground "white" :box nil)
-(set-face-attribute 'tabbar-selected-modified nil
-        :inherit 'tabbar-selected :foreground "GoldenRod2" :box nil)
-(set-face-attribute 'tabbar-button nil
-        :box nil)
-(tabbar-mode t)
 
 
 ;
