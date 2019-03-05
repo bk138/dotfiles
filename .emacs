@@ -32,20 +32,7 @@ Usage: (package-require 'package)"
 ;
 (package-require 'tabbar)
 (customize-set-variable 'tabbar-separator '(1))
-(set-face-attribute 'tabbar-default nil
-                    :background "gray"
-                    :foreground "gray60"
-                    :distant-foreground "gray50"
-                    :box nil)
-(set-face-attribute 'tabbar-unselected nil
-        :foreground "black" :box nil)
-(set-face-attribute 'tabbar-modified nil
-        :foreground "red4" :box nil
-        :inherit 'tabbar-unselected)
-(set-face-attribute 'tabbar-selected nil
-        :background "#4090c0" :foreground "white" :box nil)
-(set-face-attribute 'tabbar-selected-modified nil
-        :inherit 'tabbar-selected :foreground "GoldenRod2" :box nil)
+
 (set-face-attribute 'tabbar-button nil
         :box nil)
 (tabbar-mode t)
@@ -64,9 +51,49 @@ Usage: (package-require 'package)"
 	      (if (circadian-a-earlier-b-p (circadian-now-time) (circadian-sunset))
 		  (progn
 		    (message "setting day theme")
+		    (set-face-attribute 'tabbar-default nil
+					:background "gray"
+					:foreground "gray60"
+					:distant-foreground "gray50"
+					:box nil)
+		    (set-face-attribute 'tabbar-unselected nil
+					:foreground "black"
+					:box nil)
+		    (set-face-attribute 'tabbar-modified nil
+					:foreground "red4"
+					:box nil
+					:inherit 'tabbar-unselected)
+		    (set-face-attribute 'tabbar-selected nil
+					:background "#4090c0"
+					:foreground "white"
+					:box nil)
+		    (set-face-attribute 'tabbar-selected-modified nil
+					:inherit 'tabbar-selected
+					:foreground "GoldenRod2"
+					:box nil)
 		    )
 		(progn
 		  (message "setting night theme")
+		  (set-face-attribute 'tabbar-default nil
+				      :background "gray25"
+				      :foreground "gray60"
+				      :distant-foreground "gray50"
+				      :box nil)
+		  (set-face-attribute 'tabbar-unselected nil
+				      :foreground "gray60"
+				      :box nil)
+		  (set-face-attribute 'tabbar-modified nil
+				      :foreground "OrangeRed1"
+				      :box nil
+				      :inherit 'tabbar-unselected)
+		  (set-face-attribute 'tabbar-selected nil
+				      :background "SteelBlue4"
+				      :foreground "white"
+				      :box nil)
+		  (set-face-attribute 'tabbar-selected-modified nil
+				      :inherit 'tabbar-selected
+				      :foreground "orange"
+				      :box nil)
 		  ))))
 (circadian-setup)
 ; disable native scroll, annoying on dark theme
