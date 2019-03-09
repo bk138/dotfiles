@@ -94,6 +94,7 @@ Usage: (package-require 'package)"
 				      :inherit 'tabbar-selected
 				      :foreground "orange"
 				      :box nil)
+		  (set-face-foreground 'vertical-border "gray30")
 		  ))))
 (circadian-setup)
 ; disable native scroll, annoying on dark theme
