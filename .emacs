@@ -48,7 +48,7 @@ Usage: (package-require 'package)"
 			 (:sunset  . tango-dark)))
 (add-hook 'circadian-after-load-theme-hook
           #'(lambda (theme)
-	      (if (circadian-a-earlier-b-p (circadian-now-time) (circadian-sunset))
+	      (if (and (circadian-a-earlier-b-p (circadian-now-time) (circadian-sunset)) (circadian-a-earlier-b-p (circadian-sunrise) (circadian-now-time)))
 		  (progn
 		    (message "setting day theme")
 		    (set-face-attribute 'tabbar-default nil
