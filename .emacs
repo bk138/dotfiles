@@ -71,6 +71,18 @@ Usage: (package-require 'package)"
 					:inherit 'tabbar-selected
 					:foreground "GoldenRod2"
 					:box nil)
+
+		    (set-face-attribute 'mode-line-inactive nil
+					:foreground "gray30"
+					:background "gray"
+					:box nil)
+		    (set-face-attribute 'mode-line nil
+					:foreground "gray10"
+					:background "gray90"
+					:box nil)
+		    (set-face-attribute 'mode-line-highlight nil
+					:foreground "gray50"
+					:box nil)
 		    )
 		(progn
 		  (message "setting night theme")
@@ -94,7 +106,20 @@ Usage: (package-require 'package)"
 				      :inherit 'tabbar-selected
 				      :foreground "orange"
 				      :box nil)
+		  
 		  (set-face-foreground 'vertical-border "gray30")
+
+		  (set-face-attribute 'mode-line-inactive nil
+				      :foreground "gray60"
+				      :background "gray30"
+				      :box nil)
+		  (set-face-attribute 'mode-line nil
+				      :foreground "gray10"
+				      :background "gray60"
+				      :box nil)
+		  (set-face-attribute 'mode-line-highlight nil
+				      :foreground "gray90"
+				      :box nil)
 		  ))))
 (circadian-setup)
 ; disable native scroll, annoying on dark theme
