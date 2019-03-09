@@ -1,11 +1,24 @@
 
 ;
-; Convenient package handling in emacs
+; bootstrap use-package as per http://cachestocaches.com/2015/8/getting-started-use-package/
 ;
 (require 'package)
+(setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+; configure use-package
+(eval-when-compile
+  (require 'use-package)
+  (setq use-package-compute-statistics t)
+  (require 'use-package-ensure)
+  (setq use-package-always-ensure t))
 
 ;; Make sure a package is installed
+;; FIXME can be removed once everything is using use-package
 (defun package-require (package)
   "Install a PACKAGE unless it is already installed 
 or a feature with the same name is already active.
@@ -19,23 +32,17 @@ Usage: (package-require 'package)"
     ; if we cannot require it, it does not exist, yet. So install it.
     (error (package-install package))))
 
-;; Initialize installed packages
-(package-initialize)  
-;; package init not needed, since it is done anyway in emacs 24 after reading the init
-;; but we have to load the list of available packages
-(when (not package-archive-contents)
-    (package-refresh-contents))
-
 
 ;
 ; tabs, https://amitp.blogspot.com/2018/10/emacs-prettier-tabbar.html
 ;
-(package-require 'tabbar)
-(customize-set-variable 'tabbar-separator '(1))
+(use-package tabbar
+  :config
+  (customize-set-variable 'tabbar-separator '(1))
+  (set-face-attribute 'tabbar-button nil
+		      :box nil)
+  (tabbar-mode 1))
 
-(set-face-attribute 'tabbar-button nil
-        :box nil)
-(tabbar-mode t)
 
 ;
 ; theme accroding to day/night
