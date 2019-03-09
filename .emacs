@@ -396,11 +396,11 @@ Usage: (package-require 'package)"
 ;
 ; markdown
 ;
-(package-require 'markdown-mode)
+(use-package markdown-mode)
 
 
 ;
 ; YAML
 ;
-(package-require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(use-package yaml-mode)
+
