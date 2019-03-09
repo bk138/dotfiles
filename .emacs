@@ -153,6 +153,11 @@ Usage: (package-require 'package)"
 (setq initial-frame-alist '( (fullscreen . maximized)))
 
 
+;
+; use winner mode.
+;
+(winner-mode 1)
+
 
 ;
 ; hide menubar per default, make toggable
