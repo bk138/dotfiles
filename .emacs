@@ -55,9 +55,9 @@ Usage: (package-require 'package)"
 			 (:sunset  . tango-dark)))
 (add-hook 'circadian-after-load-theme-hook
           #'(lambda (theme)
-	      (if (and (circadian-a-earlier-b-p (circadian-now-time) (circadian-sunset)) (circadian-a-earlier-b-p (circadian-sunrise) (circadian-now-time)))
+	      (if (string-equal theme "tango")
 		  (progn
-		    (message "setting day theme")
+		    (message "adapting for tango")
 		    (set-face-attribute 'tabbar-default nil
 					:background "gray"
 					:foreground "gray60"
@@ -90,9 +90,10 @@ Usage: (package-require 'package)"
 		    (set-face-attribute 'mode-line-highlight nil
 					:foreground "gray50"
 					:box nil)
-		    )
+		    ))
+	      (if (string-equal theme "tango-dark")
 		(progn
-		  (message "setting night theme")
+		  (message "adapting for tango-dark")
 		  (set-face-attribute 'tabbar-default nil
 				      :background "gray25"
 				      :foreground "gray60"
