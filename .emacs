@@ -47,89 +47,90 @@ Usage: (package-require 'package)"
 ;
 ; theme accroding to day/night
 ;
-(setq calendar-location-name "Berlin") 
-(setq calendar-latitude 52.30)
-(setq calendar-longitude 13.25)
-(package-require 'circadian)
-(setq circadian-themes '((:sunrise . tango)
-			 (:sunset  . tango-dark)))
-(add-hook 'circadian-after-load-theme-hook
-          #'(lambda (theme)
-	      (if (string-equal theme "tango")
-		  (progn
-		    (message "adapting for tango")
-		    (set-face-attribute 'tabbar-default nil
-					:background "gray"
-					:foreground "gray60"
-					:distant-foreground "gray50"
-					:box nil)
-		    (set-face-attribute 'tabbar-unselected nil
-					:foreground "black"
-					:box nil)
-		    (set-face-attribute 'tabbar-modified nil
-					:foreground "red4"
-					:box nil
-					:inherit 'tabbar-unselected)
-		    (set-face-attribute 'tabbar-selected nil
-					:background "#4090c0"
-					:foreground "white"
-					:box nil)
-		    (set-face-attribute 'tabbar-selected-modified nil
-					:inherit 'tabbar-selected
-					:foreground "GoldenRod2"
-					:box nil)
+(use-package circadian
+  :config
+  (setq calendar-location-name "Berlin") 
+  (setq calendar-latitude 52.30)
+  (setq calendar-longitude 13.25)
+  (setq circadian-themes '((:sunrise . tango)
+			   (:sunset  . tango-dark)))
+  (add-hook 'circadian-after-load-theme-hook
+	    #'(lambda (theme)
+		(if (string-equal theme "tango")
+		    (progn
+		      (message "adapting for tango")
+		      (set-face-attribute 'tabbar-default nil
+					  :background "gray"
+					  :foreground "gray60"
+					  :distant-foreground "gray50"
+					  :box nil)
+		      (set-face-attribute 'tabbar-unselected nil
+					  :foreground "black"
+					  :box nil)
+		      (set-face-attribute 'tabbar-modified nil
+					  :foreground "red4"
+					  :box nil
+					  :inherit 'tabbar-unselected)
+		      (set-face-attribute 'tabbar-selected nil
+					  :background "#4090c0"
+					  :foreground "white"
+					  :box nil)
+		      (set-face-attribute 'tabbar-selected-modified nil
+					  :inherit 'tabbar-selected
+					  :foreground "GoldenRod2"
+					  :box nil)
 
-		    (set-face-attribute 'mode-line-inactive nil
-					:foreground "gray30"
-					:background "gray"
-					:box nil)
-		    (set-face-attribute 'mode-line nil
-					:foreground "gray10"
-					:background "gray90"
-					:box nil)
-		    (set-face-attribute 'mode-line-highlight nil
-					:foreground "gray50"
-					:box nil)
-		    ))
-	      (if (string-equal theme "tango-dark")
-		(progn
-		  (message "adapting for tango-dark")
-		  (set-face-attribute 'tabbar-default nil
-				      :background "gray25"
-				      :foreground "gray60"
-				      :distant-foreground "gray50"
-				      :box nil)
-		  (set-face-attribute 'tabbar-unselected nil
-				      :foreground "gray60"
-				      :box nil)
-		  (set-face-attribute 'tabbar-modified nil
-				      :foreground "OrangeRed1"
-				      :box nil
-				      :inherit 'tabbar-unselected)
-		  (set-face-attribute 'tabbar-selected nil
-				      :background "SteelBlue4"
-				      :foreground "white"
-				      :box nil)
-		  (set-face-attribute 'tabbar-selected-modified nil
-				      :inherit 'tabbar-selected
-				      :foreground "orange"
-				      :box nil)
-		  
-		  (set-face-foreground 'vertical-border "gray30")
+		      (set-face-attribute 'mode-line-inactive nil
+					  :foreground "gray30"
+					  :background "gray"
+					  :box nil)
+		      (set-face-attribute 'mode-line nil
+					  :foreground "gray10"
+					  :background "gray90"
+					  :box nil)
+		      (set-face-attribute 'mode-line-highlight nil
+					  :foreground "gray50"
+					  :box nil)
+		      ))
+		(if (string-equal theme "tango-dark")
+		    (progn
+		      (message "adapting for tango-dark")
+		      (set-face-attribute 'tabbar-default nil
+					  :background "gray25"
+					  :foreground "gray60"
+					  :distant-foreground "gray50"
+					  :box nil)
+		      (set-face-attribute 'tabbar-unselected nil
+					  :foreground "gray60"
+					  :box nil)
+		      (set-face-attribute 'tabbar-modified nil
+					  :foreground "OrangeRed1"
+					  :box nil
+					  :inherit 'tabbar-unselected)
+		      (set-face-attribute 'tabbar-selected nil
+					  :background "SteelBlue4"
+					  :foreground "white"
+					  :box nil)
+		      (set-face-attribute 'tabbar-selected-modified nil
+					  :inherit 'tabbar-selected
+					  :foreground "orange"
+					  :box nil)
+		      
+		      (set-face-foreground 'vertical-border "gray30")
 
-		  (set-face-attribute 'mode-line-inactive nil
-				      :foreground "gray60"
-				      :background "gray30"
-				      :box nil)
-		  (set-face-attribute 'mode-line nil
-				      :foreground "gray10"
-				      :background "gray60"
-				      :box nil)
-		  (set-face-attribute 'mode-line-highlight nil
-				      :foreground "gray90"
-				      :box nil)
-		  ))))
-(circadian-setup)
+		      (set-face-attribute 'mode-line-inactive nil
+					  :foreground "gray60"
+					  :background "gray30"
+					  :box nil)
+		      (set-face-attribute 'mode-line nil
+					  :foreground "gray10"
+					  :background "gray60"
+					  :box nil)
+		      (set-face-attribute 'mode-line-highlight nil
+					  :foreground "gray90"
+					  :box nil)
+		      ))))
+  (circadian-setup))
 ; disable native scroll, annoying on dark theme
 (scroll-bar-mode -1)
 
