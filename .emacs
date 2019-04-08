@@ -297,10 +297,11 @@ Usage: (package-require 'package)"
 ;
 ; show recent files
 ;
-(package-require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 1000)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+(use-package recentf
+  :bind ("C-x C-r" . recentf-open-files)
+  :init
+  (setq recentf-max-menu-items 1000)
+  (recentf-mode 1))
 
 
 ;
