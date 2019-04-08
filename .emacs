@@ -398,11 +398,13 @@ Usage: (package-require 'package)"
 ;
 ; markdown
 ;
-(use-package markdown-mode)
+(use-package markdown-mode
+  :defer t)
 
 
 ;
 ; YAML
 ;
-(use-package yaml-mode)
+(use-package yaml-mode
+  :defer t)
 
