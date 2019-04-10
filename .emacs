@@ -360,19 +360,17 @@ Usage: (package-require 'package)"
 ;
 ; web editing tweaks
 ;
-(package-require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(use-package web-mode
+  :mode "\\.php\\'"
+  :mode "\\.html?\\'")
 
 
 ;
 ; JavaScript
 ;
-(package-require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-;; Better imenu
-(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+(use-package js2-mode
+  :mode "\\.js\\'"
+  :hook (js2-mode . js2-imenu-extras-mode))
 
 
 ;
