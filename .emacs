@@ -145,8 +145,8 @@ Usage: (package-require 'package)"
 ;
 ; highlight numbers
 ;
-(package-require 'highlight-numbers)
-(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+(use-package highlight-numbers
+  :hook (prog-mode . highlight-numbers-mode))
 
 
 ;
