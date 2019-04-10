@@ -204,9 +204,9 @@ Usage: (package-require 'package)"
 ;
 (show-paren-mode t)
 ; and also surrounding ones ;-)
-(package-require 'highlight-parentheses)
-(setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue"))
-(add-hook 'prog-mode-hook 'highlight-parentheses-mode)
+(use-package highlight-parentheses
+  :hook (prog-mode . highlight-parentheses-mode)
+  :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue")))
 
 ;
 ; set indentation
