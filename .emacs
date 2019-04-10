@@ -231,9 +231,10 @@ Usage: (package-require 'package)"
 ;
 ; shwo changes on the fly
 ;
-(package-require 'diff-hl)
-(global-diff-hl-mode 1)
-(diff-hl-flydiff-mode 1)
+(use-package diff-hl
+  :init
+  (global-diff-hl-mode 1)
+  (diff-hl-flydiff-mode 1))
 
 
 ;
@@ -251,8 +252,8 @@ Usage: (package-require 'package)"
 ;
 ; Highlight TODO and FIXME in comments 
 ;
-(package-require 'hl-todo)
-(global-hl-todo-mode)
+(use-package hl-todo
+  :init (global-hl-todo-mode))
 
 
 ;
