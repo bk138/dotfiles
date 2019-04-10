@@ -265,23 +265,27 @@ Usage: (package-require 'package)"
 ;
 ; use treemacs on the left
 ;
-(package-require 'treemacs)
+(use-package treemacs
+  :config
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
+  ; make scrolling activate the treemacs window so the follow modes don't reset the position all the time
+  (if (string-equal system-type "gnu/linux") ; linux
+      (progn
+	(define-key treemacs-mode-map [mouse-4] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
+	(define-key treemacs-mode-map [mouse-5] (lambda () (interactive) (treemacs-select-window) (scroll-up 5))))
+    (progn
+      (define-key treemacs-mode-map [wheel-up] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
+      (define-key treemacs-mode-map [wheel-down] (lambda () (interactive) (treemacs-select-window) (scroll-up 5)))
+      ))
+  (treemacs-git-mode 'simple)
+  (treemacs-tag-follow-mode t)
+  (treemacs-follow-mode t)
+  :init
+  (treemacs)
+  )
+
 (use-package treemacs-magit
   :after treemacs magit)
-(define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
-; make scrolling activate the treemacs window so the follow modes don't reset the position all the time
-(if (string-equal system-type "gnu/linux") ; linux
-    (progn
-      (define-key treemacs-mode-map [mouse-4] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
-      (define-key treemacs-mode-map [mouse-5] (lambda () (interactive) (treemacs-select-window) (scroll-up 5))))
-  (progn
-    (define-key treemacs-mode-map [wheel-up] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
-    (define-key treemacs-mode-map [wheel-down] (lambda () (interactive) (treemacs-select-window) (scroll-up 5)))
-    ))
-(treemacs-git-mode 'simple)
-(treemacs-tag-follow-mode t)
-(treemacs-follow-mode t)
-(treemacs)
 
 
 ;
