@@ -138,8 +138,8 @@ Usage: (package-require 'package)"
 ;
 ; highlight doxygen comments
 ;
-(package-require 'highlight-doxygen)
-(highlight-doxygen-global-mode 1)
+(use-package highlight-doxygen
+  :hook (prog-mode . highlight-doxygen-mode))
 
 
 ;
