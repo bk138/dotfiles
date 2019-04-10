@@ -259,8 +259,8 @@ Usage: (package-require 'package)"
 ;
 ; which-key
 ;
-(package-require 'which-key)
-(which-key-mode)
+(use-package which-key
+ :init (which-key-mode))
 
 ;
 ; use treemacs on the left
@@ -287,8 +287,8 @@ Usage: (package-require 'package)"
 ;
 ; go to the last change. sweet!
 ;
-(package-require 'goto-chg)
-(global-set-key [(control .)] 'goto-last-change)
+(use-package goto-chg
+  :bind ("C-." . goto-last-change))
 
 
 ;
