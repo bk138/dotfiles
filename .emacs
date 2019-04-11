@@ -160,7 +160,7 @@ Usage: (package-require 'package)"
 ;;
 (tool-bar-mode -1)
 (setq initial-frame-alist '( (fullscreen . maximized)))
-
+(set-frame-parameter nil 'undecorated t) ; and no wm title bar either
 
 ;;
 ;; use winner mode.
