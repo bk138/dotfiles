@@ -319,6 +319,16 @@ Usage: (package-require 'package)"
 
 
 ;;
+;; find external programs on OSX and other platforms
+;;
+(use-package exec-path-from-shell
+  :defer t
+  :init
+  (exec-path-from-shell-initialize)
+  )
+
+
+;;
 ;; autocompletion
 ;;
 (package-require 'company)
