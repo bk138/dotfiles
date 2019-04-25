@@ -186,6 +186,13 @@ Usage: (package-require 'package)"
 ;;
 (setq mouse-wheel-progressive-speed nil)
 
+;;
+;; remap home and end keys on OSX
+;;
+(if (string-equal system-type "darwin")
+    (progn
+      (global-set-key (kbd "<home>") 'beginning-of-line)
+      (global-set-key (kbd "<end>") 'end-of-line)))
 
 ;;
 ;; disable bell-on-scroll-end
