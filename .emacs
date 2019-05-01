@@ -270,6 +270,26 @@ Usage: (package-require 'package)"
   :bind ("C-s" . swiper))
 
 ;;
+;; better completion of emacs UI and commands. nicer than helm IMO.
+;;
+(use-package ivy
+  :init (ivy-mode)
+  :config
+  (setq ivy-use-virtual-buffers t) ; kind of a builtin recentf :-)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-wrap t)) ; wrap around
+
+(use-package counsel ; use ivy in more places
+  :init (counsel-mode)
+  :bind
+  ("C-c g" . counsel-git) ; search file in current git project
+  ("C-c j" . counsel-git-grep) ; search regexp in current project via git grep
+  ("C-c c" . counsel-compile)
+  ("C-c k" . counsel-ag) ; search regexp occurence in current project via ag
+  ("C-x l" . counsel-locate))
+
+
+;;
 ;; use treemacs on the left
 ;;
 (use-package treemacs
