@@ -264,6 +264,12 @@ Usage: (package-require 'package)"
  :init (which-key-mode))
 
 ;;
+;; even better search in file
+;;
+(use-package swiper
+  :bind ("C-s" . swiper))
+
+;;
 ;; use treemacs on the left
 ;;
 (use-package treemacs
