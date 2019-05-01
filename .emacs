@@ -156,6 +156,12 @@ Usage: (package-require 'package)"
 
 
 ;;
+;; functionality to hide modes in modeline
+;;
+(use-package diminish)
+
+
+;;
 ;; start maximized, no toolbar
 ;;
 (tool-bar-mode -1)
@@ -207,7 +213,8 @@ Usage: (package-require 'package)"
 ;; and also surrounding ones ;;-)
 (use-package highlight-parentheses
   :hook (prog-mode . highlight-parentheses-mode)
-  :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue")))
+  :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue"))
+  :diminish)
 
 ;;
 ;; set indentation
@@ -261,7 +268,8 @@ Usage: (package-require 'package)"
 ;; which-key
 ;;
 (use-package which-key
- :init (which-key-mode))
+  :diminish
+  :init (which-key-mode))
 
 ;;
 ;; even better search in file
@@ -274,6 +282,7 @@ Usage: (package-require 'package)"
 ;;
 (use-package ivy
   :init (ivy-mode)
+  :diminish
   :config
   (setq ivy-use-virtual-buffers t) ; kind of a builtin recentf :-)
   (setq ivy-count-format "(%d/%d) ")
@@ -281,6 +290,7 @@ Usage: (package-require 'package)"
 
 (use-package counsel ; use ivy in more places
   :init (counsel-mode)
+  :diminish
   :bind
   ("C-c g" . counsel-git) ; search file in current git project
   ("C-c j" . counsel-git-grep) ; search regexp in current project via git grep
