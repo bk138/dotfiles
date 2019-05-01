@@ -195,15 +195,9 @@ Usage: (package-require 'package)"
       (global-set-key (kbd "<end>") 'end-of-line)))
 
 ;;
-;; disable bell-on-scroll-end
+;; disable bell
 ;;
-(defun my-bell-function ()
-  (unless (memq this-command
-        '(isearch-abort abort-recursive-edit exit-minibuffer
-              keyboard-quit mwheel-scroll down up next-line previous-line
-              backward-char forward-char))
-    (ding)))
-(setq ring-bell-function 'my-bell-function)
+(setq ring-bell-function 'ignore)
 
 
 ;;
