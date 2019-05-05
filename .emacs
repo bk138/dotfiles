@@ -186,6 +186,10 @@ Usage: (package-require 'package)"
 ;;
 (global-set-key [f5] 'compile)
 
+;;
+;; jump to reladed file
+;;
+(global-set-key (kbd "C-c o") 'ff-find-other-file)
 
 ;;
 ;; disable mouse whell scroll accel
