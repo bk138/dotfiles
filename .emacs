@@ -229,10 +229,10 @@ Usage: (package-require 'package)"
 
 
 ;;
-;; line numbers
+;; line numbers and trailing whitespace deletion for code
 ;;
 (add-hook 'prog-mode-hook 'linum-mode)
-
+(add-hook 'prog-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 ;;
 ;; delete to trash
