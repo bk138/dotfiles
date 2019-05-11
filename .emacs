@@ -253,7 +253,9 @@ Usage: (package-require 'package)"
 ;; use magit
 ;;
 (use-package magit
-  :bind ("C-x g" . magit-status))
+  :bind ("C-x g" . magit-status)
+  :after (diff-hl)
+  :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh))
 
 
 ;;
