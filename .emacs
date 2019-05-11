@@ -255,7 +255,7 @@ Usage: (package-require 'package)"
 (use-package magit
   :bind ("C-x g" . magit-status)
   :after (diff-hl)
-  :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh))
+  :config (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 
 ;;
