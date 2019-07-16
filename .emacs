@@ -373,7 +373,6 @@ Usage: (package-require 'package)"
 ;; autocompletion
 ;;
 (package-require 'company)
-(package-require 'company-irony) ;; for C
 (global-company-mode 1)
 (defun indent-or-complete ()
     (interactive)
