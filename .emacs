@@ -230,8 +230,8 @@ Usage: (package-require 'package)"
 ;; set indentation
 ;;
 (setq c-basic-offset 4)
-(package-require 'editorconfig)
-(editorconfig-mode 1)
+(use-package editorconfig
+  :config (editorconfig-mode 1))
 
 
 ;;
