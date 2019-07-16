@@ -156,6 +156,12 @@ Usage: (package-require 'package)"
 
 
 ;;
+;; c-x 1 after startup
+;;
+(add-hook 'window-setup-hook 'delete-other-windows)
+
+
+;;
 ;; functionality to hide modes in modeline
 ;;
 (use-package diminish)
