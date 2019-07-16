@@ -372,14 +372,18 @@ Usage: (package-require 'package)"
 ;;
 ;; autocompletion
 ;;
-(package-require 'company)
-(global-company-mode 1)
-(defun indent-or-complete ()
+(use-package company
+  :config
+  (global-company-mode 1)
+  (defun indent-or-complete ()
+    "Complete if point is at end of line, otherwise indent line."
     (interactive)
-    (if (looking-at "\\_>")
+    (if (looking-at "$")
         (company-complete-common)
       (indent-according-to-mode)))
-(global-set-key "\t" 'indent-or-complete) ;; tab to complete or indent
+  :bind
+  ("TAB" . indent-or-complete))
+
 
 
 ;;
