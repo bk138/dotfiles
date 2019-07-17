@@ -402,6 +402,7 @@ Usage: (package-require 'package)"
 (use-package lsp-mode
   :hook (prog-mode . lsp))
 
+(use-package yasnippet) ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
 (use-package company-lsp)
 
 
