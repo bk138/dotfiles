@@ -396,6 +396,14 @@ Usage: (package-require 'package)"
   (flycheck-pos-tip-mode))
 
 
+;;
+;; LSP
+;;
+(use-package lsp-mode
+  :hook (prog-mode . lsp))
+
+(use-package company-lsp)
+
 
 ;;
 ;; objc-mode tweaks
