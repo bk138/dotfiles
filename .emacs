@@ -376,9 +376,9 @@ Usage: (package-require 'package)"
   :config
   (global-company-mode 1)
   (defun indent-or-complete ()
-    "Complete if point is at end of line, otherwise indent line."
+    "Complete if point is looking at end-of-symbol or just after '->', otherwise indent line."
     (interactive)
-    (if (looking-at "$")
+    (if (or (looking-at "\\_>") (looking-back "->" 2))
         (company-complete-common)
       (indent-according-to-mode)))
   :bind
