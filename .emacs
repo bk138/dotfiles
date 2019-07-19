@@ -326,6 +326,7 @@ Usage: (package-require 'package)"
   (treemacs-git-mode 'simple)
   (treemacs-tag-follow-mode t)
   (treemacs-follow-mode t)
+  (setq treemacs-is-never-other-window t)
   :init
   (treemacs)
   )
