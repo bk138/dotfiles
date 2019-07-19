@@ -243,7 +243,8 @@ Usage: (package-require 'package)"
 ;; set indentation
 ;;
 (use-package editorconfig
-  :config (editorconfig-mode 1))
+  :config (editorconfig-mode 1)
+  :diminish)
 
 
 ;;
