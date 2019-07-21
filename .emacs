@@ -411,6 +411,18 @@ Usage: (package-require 'package)"
 (use-package yasnippet) ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
 (use-package company-lsp)
 
+(use-package lsp-ui
+  :config
+  ;; try to show documentation in a webkit widget
+  (setq lsp-ui-doc-use-webkit t)
+  ;; Show the peek view even if there is only 1 cross reference
+  (setq lsp-ui-peek-always-show t)
+  ;; remap xref bindings to use peek
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+  ;; no sideline
+  (setq lsp-ui-sideline-enable nil)
+  )
 
 ;;
 ;; web editing tweaks
