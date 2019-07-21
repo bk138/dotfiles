@@ -404,7 +404,9 @@ Usage: (package-require 'package)"
 ;; LSP
 ;;
 (use-package lsp-mode
-  :hook (prog-mode . lsp))
+  :hook (prog-mode . lsp)
+  :config
+  (setq lsp-prefer-flymake nil))
 
 (use-package yasnippet) ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
 (use-package company-lsp)
