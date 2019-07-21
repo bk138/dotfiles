@@ -268,6 +268,15 @@ Usage: (package-require 'package)"
   :config (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 
+;;
+;; quick git-blame
+;;
+(use-package git-messenger
+  :bind (("C-x v p" . git-messenger:popup-message))
+  :config
+  (setq git-messenger:show-detail t)
+  (setq git-messenger:use-magit-popup t))
+
 
 ;;
 ;; Highlight TODO and FIXME in comments 
