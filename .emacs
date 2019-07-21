@@ -190,6 +190,9 @@ Usage: (package-require 'package)"
   ;; disable mouse whell scroll accel
   (setq mouse-wheel-progressive-speed nil)
 
+  ;; always use the short y n
+  (defalias 'yes-or-no-p 'y-or-n-p)
+
   ;; remap home and end keys on OSX
   (if (string-equal system-type "darwin")
       (progn
