@@ -361,6 +361,10 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
+;;
+;; restart emacs from whitin emacs
+;;
+(use-package restart-emacs)
 
 ;;
 ;; autocompletion
