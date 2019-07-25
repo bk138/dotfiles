@@ -17,21 +17,6 @@
   (require 'use-package-ensure)
   (setq use-package-always-ensure t))
 
-;;;; Make sure a package is installed
-;;;; FIXME can be removed once everything is using use-package
-(defun package-require (package)
-  "Install a PACKAGE unless it is already installed 
-or a feature with the same name is already active.
-
-Usage: (package-require 'package)"
-  ;; try to activate the package with at least version 0.
-  (package-activate package '(0))
-  ;; try to just require the package. Maybe the user has it in his local config
-  (condition-case nil
-      (require package)
-    ;; if we cannot require it, it does not exist, yet. So install it.
-    (error (package-install package))))
-
 
 ;;
 ;; tabs, https://amitp.blogspot.com/2018/10/emacs-prettier-tabbar.html
@@ -438,27 +423,6 @@ Usage: (package-require 'package)"
   :mode "\\.js\\'"
   :hook (js2-mode . js2-imenu-extras-mode))
 
-
-;;
-;; TypeScript
-;;
-(package-require 'tide)
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  ;;;; company is an optional dependency. You have to
-  ;;;; install it separately via package-install
-  ;;;; `M-x package-install [ret] company`
-  (company-mode +1))
-;;;; aligns annotation to the right hand side
-(setq company-tooltip-align-annotations t)
-;;;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 
 ;;
