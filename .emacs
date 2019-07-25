@@ -393,12 +393,11 @@ Usage: (package-require 'package)"
 ;;
 ;; flycheck syntax checker
 ;;
-(package-require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(package-require 'flycheck-pos-tip)
-(with-eval-after-load 'flycheck
-  (flycheck-pos-tip-mode))
+(use-package flycheck
+  :init (global-flycheck-mode))
 
+(use-package flycheck-inline
+  :hook (flycheck-mode . flycheck-inline-mode))
 
 ;;
 ;; LSP
