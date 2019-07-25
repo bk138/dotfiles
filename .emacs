@@ -218,6 +218,10 @@
                          (re-search-forward "@\\<interface\\>" 
 					    magic-mode-regexp-match-limit t)))
                  . objc-mode))
+
+  ;; have those custom-set-variables in a separate file
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file 'noerror)
   )
 
 
