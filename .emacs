@@ -429,7 +429,8 @@
 ;;
 (use-package js2-mode
   :mode "\\.js\\'"
-  :hook (js2-mode . js2-imenu-extras-mode))
+  :hook (js2-mode . js2-imenu-extras-mode)
+  :interpreter "node")
 
 
 
