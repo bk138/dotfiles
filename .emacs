@@ -430,7 +430,8 @@
 (use-package js2-mode
   :mode "\\.js\\'"
   :hook (js2-mode . js2-imenu-extras-mode)
-  :interpreter "node")
+  :interpreter "node"
+  :config (define-key js2-mode-map [remap js-find-symbol] #'lsp-ui-peek-find-definitions))
 
 
 
