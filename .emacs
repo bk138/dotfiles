@@ -201,7 +201,10 @@
 
   ;; line numbers
   (add-hook 'prog-mode-hook 'linum-mode)
-  
+
+  ;; highlight trailing whitespace
+  (setq-default show-trailing-whitespace t)
+
   ;; C indent settings
   (setq c-basic-offset 4)
 
