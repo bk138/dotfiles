@@ -167,7 +167,7 @@
   (winner-mode 1)
   
   ;; set f5 hotkey to invoke make
-  (global-set-key [f5] 'compile)
+  (global-set-key [f5] 'projectile-compile-project)
 
   ;; jump to related file
   (global-set-key (kbd "C-c o") 'ff-find-other-file)
@@ -338,6 +338,8 @@
 (use-package treemacs-magit
   :after treemacs magit)
 
+(use-package treemacs-projectile
+  :after treemacs projectile)
 
 ;;
 ;; go to the last change. sweet!
@@ -419,6 +421,17 @@
   ;; no sideline
   (setq lsp-ui-sideline-enable nil)
   )
+
+
+;;
+;; projectile helps setting the right compilation command, and quite some stuff more
+;;
+(use-package projectile
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+
 
 ;;
 ;; web editing tweaks
