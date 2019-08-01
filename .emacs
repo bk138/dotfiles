@@ -359,6 +359,14 @@
 
 
 ;;
+;; nicer startscreen
+;;
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+
+
+;;
 ;; find external programs on OSX and other platforms
 ;;
 (use-package exec-path-from-shell
