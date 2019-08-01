@@ -371,6 +371,14 @@
 ;;
 (use-package restart-emacs)
 
+
+;;
+;; nicer package menu
+;;
+(use-package paradox
+  :config (paradox-enable))
+
+
 ;;
 ;; autocompletion
 ;;
