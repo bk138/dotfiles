@@ -375,6 +375,7 @@
 ;; autocompletion
 ;;
 (use-package company
+  :diminish
   :config
   (global-company-mode 1)
   (defun indent-or-complete ()
