@@ -311,6 +311,8 @@
   ("C-c k" . counsel-ag) ; search regexp occurence in current project via ag
   ("C-x l" . counsel-locate))
 
+(use-package smex) ; counsel-M-x will use this for recently-used
+
 
 ;;
 ;; use treemacs on the left
