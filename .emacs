@@ -422,7 +422,10 @@
 (use-package lsp-mode
   :hook (prog-mode . lsp)
   :config
-  (setq lsp-prefer-flymake nil))
+  (setq lsp-prefer-flymake nil)
+  (defun after-lsp () (when (derived-mode-p 'sh-mode) (eldoc-mode -1)))
+  (add-hook 'lsp-after-initialize-hook 'after-lsp))
+
 
 (use-package yasnippet) ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
 (use-package company-lsp)
