@@ -472,7 +472,11 @@
   :interpreter "node"
   :config (define-key js2-mode-map [remap js-find-symbol] #'lsp-ui-peek-find-definitions))
 
-
+;;
+;; Shell
+;;
+(use-package sh-script
+  :interpreter ("busybox" . shell-script-mode))
 
 ;;
 ;; markdown
