@@ -336,6 +336,7 @@
   (treemacs-tag-follow-mode t)
   (treemacs-follow-mode t)
   (setq treemacs-is-never-other-window t)
+  :bind  ("C-x t" . treemacs-select-window); switch over to treemacs
   :init
   (treemacs)
   )
