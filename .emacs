@@ -343,6 +343,10 @@
 (use-package treemacs-projectile
   :after treemacs projectile)
 
+(use-package treemacs-icons-dired
+  :after treemacs dired
+  :config (treemacs-icons-dired-mode))
+
 ;;
 ;; go to the last change. sweet!
 ;;
