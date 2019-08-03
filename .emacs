@@ -196,6 +196,9 @@
   ;; auto-refresh all buffers when files have changed on disk
   (global-auto-revert-mode t)
 
+  ;; Auto-refresh dired on file change
+  (add-hook 'dired-mode-hook 'auto-revert-mode)
+
   ;; paren matching on
   (show-paren-mode t)
 
