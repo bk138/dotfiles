@@ -317,6 +317,7 @@
 (use-package smex) ; counsel-M-x will use this for recently-used
 
 (use-package counsel-projectile
+  :after projectile
   :config
   (counsel-projectile-mode))
 
