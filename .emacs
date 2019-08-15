@@ -459,6 +459,9 @@
   (setq lsp-ui-sideline-enable nil)
   )
 
+(use-package cquery) ; we use this on OSX
+
+
 
 ;;
 ;; projectile helps setting the right compilation command, and quite some stuff more
