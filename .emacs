@@ -238,6 +238,14 @@
   :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue"))
   :diminish)
 
+
+;; highlight indent levels
+(use-package highlight-indent-guides
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config (setq highlight-indent-guides-method 'character)
+  :diminish)
+
+
 ;;
 ;; set indentation
 ;;
