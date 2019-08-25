@@ -486,8 +486,13 @@
 ;; web editing tweaks
 ;;
 (use-package web-mode
-  :mode "\\.php\\'"
   :mode "\\.html?\\'")
+
+
+;;
+;; PHP
+;;
+(use-package php-mode)
 
 
 ;;
