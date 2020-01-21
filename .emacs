@@ -493,7 +493,8 @@
 ;;
 ;; PHP
 ;;
-(use-package php-mode)
+(use-package php-mode
+  :defer t)
 
 
 ;;
