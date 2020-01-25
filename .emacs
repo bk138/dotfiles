@@ -251,6 +251,9 @@
   :config (setq highlight-indent-guides-method 'character)
   :diminish)
 
+;; background colour names with their colour
+(use-package rainbow-mode
+  :hook (prog-mode . rainbow-mode))
 
 ;;
 ;; set indentation
