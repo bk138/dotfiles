@@ -176,6 +176,10 @@
   ;; disable mouse whell scroll accel
   (setq mouse-wheel-progressive-speed nil)
 
+  ;; make scrolling less laggy by applying some optimisations
+  (setq jit-lock-defer-time 0)
+  (setq fast-but-imprecise-scrolling t)
+
   ;; always use the short y n
   (defalias 'yes-or-no-p 'y-or-n-p)
 
