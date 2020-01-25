@@ -105,12 +105,12 @@
 		      (set-face-foreground 'vertical-border "gray30")
 
 		      (set-face-attribute 'mode-line-inactive nil
-					  :foreground "gray60"
-					  :background "gray30"
+					  :foreground "gray40"
+					  :background "gray20"
 					  :box nil)
 		      (set-face-attribute 'mode-line nil
-					  :foreground "gray10"
-					  :background "gray60"
+					  :foreground "gray70"
+					  :background "gray30"
 					  :box nil)
 		      (set-face-attribute 'mode-line-highlight nil
 					  :foreground "gray90"
