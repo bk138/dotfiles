@@ -207,7 +207,7 @@
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
   ;; highlight trailing whitespace
-  (setq-default show-trailing-whitespace t)
+  (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
 
   ;; C indent settings
   (setq c-basic-offset 4)
