@@ -445,7 +445,8 @@
 ;; flycheck syntax checker
 ;;
 (use-package flycheck
-  :init (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :bind ("C-c f" . flycheck-list-errors))
 
 (use-package flycheck-inline
   :hook (flycheck-mode . flycheck-inline-mode))
