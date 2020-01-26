@@ -133,10 +133,15 @@
   :hook (prog-mode . highlight-numbers-mode))
 
 
-;;
-;; functionality to hide modes in modeline
-;;
-(use-package diminish)
+;; way faster than spaceline and more to my liking than powerline, not as basic as moodline
+(use-package doom-modeline
+  :config
+  (setq doom-modeline-height 1)
+  (set-face-attribute 'mode-line nil :height 0.95)
+  (set-face-attribute 'mode-line-inactive nil :height 0.95)
+
+  (doom-modeline-mode)
+  )
 
 
 ;;
@@ -241,15 +246,13 @@
 ;; and also surrounding ones ;;-)
 (use-package highlight-parentheses
   :hook (prog-mode . highlight-parentheses-mode)
-  :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue"))
-  :diminish)
+  :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue")))
 
 
 ;; highlight indent levels
 (use-package highlight-indent-guides
   :hook (prog-mode . highlight-indent-guides-mode)
-  :config (setq highlight-indent-guides-method 'character)
-  :diminish)
+  :config (setq highlight-indent-guides-method 'character))
 
 ;; background colour names with their colour
 (use-package rainbow-mode
@@ -259,8 +262,7 @@
 ;; set indentation
 ;;
 (use-package editorconfig
-  :config (editorconfig-mode 1)
-  :diminish)
+  :config (editorconfig-mode 1))
 
 
 ;;
@@ -278,7 +280,9 @@
 (use-package magit
   :bind ("C-x g" . magit-status)
   :after (diff-hl)
-  :config (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
+  :config
+  (setq auto-revert-check-vc-info t)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 
 ;;
@@ -302,7 +306,6 @@
 ;; which-key
 ;;
 (use-package which-key
-  :diminish
   :init (which-key-mode))
 
 ;;
@@ -316,7 +319,6 @@
 ;;
 (use-package ivy
   :init (ivy-mode)
-  :diminish
   :config
   (setq ivy-use-virtual-buffers t) ; kind of a builtin recentf :-)
   (setq ivy-count-format "(%d/%d) ")
@@ -324,7 +326,6 @@
 
 (use-package counsel ; use ivy in more places
   :init (counsel-mode)
-  :diminish
   :bind
   ("C-c g" . counsel-git) ; search file in current git project
   ("C-c j" . counsel-git-grep) ; search regexp in current project via git grep
@@ -424,7 +425,6 @@
 ;; autocompletion
 ;;
 (use-package company
-  :diminish
   :config
   (global-company-mode 1)
   (defun indent-or-complete ()
