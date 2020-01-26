@@ -217,6 +217,9 @@
   ;; line numbers
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
+  ;; show current function or similar thing in modeline
+  (which-function-mode 1)
+
   ;; highlight trailing whitespace
   (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
 
