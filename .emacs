@@ -67,12 +67,12 @@
 					  :box nil)
 
 		      (set-face-attribute 'mode-line-inactive nil
-					  :foreground "gray30"
-					  :background "gray"
+					  :foreground "gray40"
+					  :background "gray90"
 					  :box nil)
 		      (set-face-attribute 'mode-line nil
 					  :foreground "gray10"
-					  :background "gray90"
+					  :background "gray80"
 					  :box nil)
 		      (set-face-attribute 'mode-line-highlight nil
 					  :foreground "gray50"
