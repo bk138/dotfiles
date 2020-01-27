@@ -220,7 +220,7 @@
   ;; show current function or similar thing in modeline
   (which-function-mode 1)
   (set-face-attribute 'which-func nil
-		      :foreground "turquoise")
+		      :foreground "magenta")
 
   ;; highlight trailing whitespace
   (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
