@@ -139,6 +139,12 @@
   (setq doom-modeline-height 1)
   (set-face-attribute 'mode-line nil :height 0.95)
   (set-face-attribute 'mode-line-inactive nil :height 0.95)
+  ;; show process status of inactive buffers coloured as well
+  (doom-modeline-def-segment process
+  "The process info, always coloured"
+  (if (doom-modeline--active)
+      mode-line-process
+    mode-line-process))
 
   (doom-modeline-mode)
   )
