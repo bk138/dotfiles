@@ -344,7 +344,8 @@
   ("C-c j" . counsel-git-grep) ; search regexp in current project via git grep
   ("C-c c" . counsel-compile)
   ("C-c k" . counsel-ag) ; search regexp occurence in current project via ag
-  ("C-x l" . counsel-locate))
+  ("C-x l" . counsel-locate)
+  ("C-c i" . counsel-imenu)) ; list things in file
 
 (use-package smex) ; counsel-M-x will use this for recently-used
 
