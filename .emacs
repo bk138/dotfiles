@@ -18,6 +18,8 @@
   (require 'use-package-ensure)
   (setq use-package-always-ensure t))
 
+;; make elpa usable again
+(use-package gnu-elpa-keyring-update)
 
 ;;
 ;; tabs, https://amitp.blogspot.com/2018/10/emacs-prettier-tabbar.html
