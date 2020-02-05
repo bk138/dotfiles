@@ -5,7 +5,7 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3") ; make default https elpa usable again, 
 (package-initialize)
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
