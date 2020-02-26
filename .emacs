@@ -202,7 +202,8 @@
   (if (string-equal system-type "darwin")
       (progn
 	(global-set-key (kbd "<home>") 'beginning-of-line)
-	(global-set-key (kbd "<end>") 'end-of-line)))
+	(global-set-key (kbd "<end>") 'end-of-line)
+	(setq mac-right-option-modifier 'none))) ; make alt-gr work
 
   ;; disable bell
   (setq ring-bell-function 'ignore)
