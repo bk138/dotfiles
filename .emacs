@@ -484,6 +484,7 @@
   :config
   ;; try to show documentation in a webkit widget
   (setq lsp-ui-doc-use-webkit t)
+  (setq lsp-ui-doc-position (quote top))
   ;; Show the peek view even if there is only 1 cross reference
   (setq lsp-ui-peek-always-show t)
   (setq lsp-ui-peek-fontify (quote always))
