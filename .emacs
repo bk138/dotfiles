@@ -183,6 +183,9 @@
   ;; set f5 hotkey to invoke make
   (global-set-key [f5] 'projectile-compile-project)
 
+  ;; encourage emacs to follow the compilation buffer
+  (setq compilation-scroll-output t)
+
   ;; jump to related file
   (global-set-key (kbd "C-c o") 'ff-find-other-file)
 
