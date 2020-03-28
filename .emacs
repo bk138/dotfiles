@@ -567,5 +567,5 @@
 ;;
 ;; CMake
 ;;
-(use-package yaml-mode
+(use-package cmake-mode
   :defer t)
