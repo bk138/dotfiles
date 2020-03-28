@@ -498,8 +498,7 @@
   (setq lsp-ui-sideline-enable nil)
   )
 
-(use-package cquery) ; we use this on OSX
-(use-package ccls) ; and this on Debian
+(use-package ccls) ; C Language Server
 
 
 
