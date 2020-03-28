@@ -562,3 +562,10 @@
 (use-package lsp-java
   :after lsp
   :config (add-hook 'java-mode-hook 'lsp))
+
+
+;;
+;; CMake
+;;
+(use-package yaml-mode
+  :defer t)
