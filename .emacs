@@ -194,7 +194,6 @@
   (setq mouse-wheel-progressive-speed nil)
 
   ;; make scrolling less laggy by applying some optimisations
-  (setq jit-lock-defer-time 0)
   (setq fast-but-imprecise-scrolling t)
   (setq gc-cons-threshold 1000000000) ; fewer GCs
   (setq inhibit-compacting-font-caches t) ; don't compat font cache on GC
