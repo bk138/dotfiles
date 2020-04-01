@@ -568,3 +568,10 @@
 ;;
 (use-package cmake-mode
   :defer t)
+
+;;
+;; Rust
+;;
+(use-package rust-mode
+  :config (setq rust-format-on-save t))
+
