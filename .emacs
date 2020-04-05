@@ -468,7 +468,8 @@
   :bind ("C-c f" . flycheck-list-errors))
 
 (use-package flycheck-inline
-  :hook (flycheck-mode . flycheck-inline-mode))
+  :hook (flycheck-mode . flycheck-inline-mode)
+  :config (setq flycheck-display-errors-delay 0))
 
 ;;
 ;; LSP
