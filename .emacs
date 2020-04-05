@@ -477,6 +477,7 @@
   (setq lsp-file-watch-threshold nil)
   (defun after-lsp () (when (derived-mode-p 'sh-mode) (eldoc-mode -1)))
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
+  (setq lsp-rust-server (quote rust-analyzer))
   :bind ("C-c r" . lsp-rename))
 
 
