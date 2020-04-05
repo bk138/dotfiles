@@ -487,6 +487,7 @@
 (use-package lsp-ui
   :config
   ;; try to show documentation in a webkit widget
+  (setq lsp-ui-doc-enable nil) ; do not popup doc without asking, use combo defined below
   (setq lsp-ui-doc-use-webkit t)
   (setq lsp-ui-doc-position (quote top))
   ;; Show the peek view even if there is only 1 cross reference
@@ -495,8 +496,10 @@
   ;; remap xref bindings to use peek
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
-  ;; no sideline
-  (setq lsp-ui-sideline-enable nil)
+  ;; custom sideline
+  (setq lsp-ui-sideline-show-diagnostics nil) ; handled by flycheck-inline
+  (set-face-attribute 'lsp-ui-sideline-code-action nil :foreground "dark green")
+  :bind ("C-c h" . lsp-ui-doc-glance)
   )
 
 (use-package ccls) ; C Language Server
