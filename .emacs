@@ -198,7 +198,6 @@
 
   ;; make scrolling less laggy by applying some optimisations
   (setq fast-but-imprecise-scrolling t)
-  (setq gc-cons-threshold 1000000000) ; fewer GCs
   (setq inhibit-compacting-font-caches t) ; don't compat font cache on GC
 
   ;; always use the short y n
