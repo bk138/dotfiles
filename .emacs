@@ -302,6 +302,7 @@
   :after (diff-hl)
   :config
   (setq auto-revert-check-vc-info t)
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 
