@@ -291,7 +291,8 @@
 (use-package diff-hl
   :init
   (global-diff-hl-mode 1)
-  (diff-hl-flydiff-mode 1))
+  (diff-hl-flydiff-mode 1)
+  (advice-add 'vc-refresh-state :after #'diff-hl-update))
 
 
 ;;
