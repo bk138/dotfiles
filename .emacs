@@ -492,7 +492,8 @@
   :bind ("C-c r" . lsp-rename))
 
 
-(use-package yasnippet) ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
+(use-package yasnippet ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
+  :hook (lsp-mode . yas-minor-mode))
 (use-package company-lsp
   :defer t)
 
