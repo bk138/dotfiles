@@ -80,6 +80,8 @@
 		      (set-face-attribute 'mode-line-highlight nil
 					  :foreground "gray50"
 					  :box nil)
+		      (global-hl-line-mode t)
+		      (set-face-background hl-line-face "gray88")
 		      ))
 		(if (string-equal theme "tango-dark")
 		    (progn
