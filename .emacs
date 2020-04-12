@@ -435,6 +435,11 @@
 ;;
 (use-package restart-emacs)
 
+;;
+;; google helper
+;;
+(use-package google-this
+  :config (google-this-mode 1))
 
 ;;
 ;; nicer package menu
