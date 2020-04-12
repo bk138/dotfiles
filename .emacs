@@ -120,6 +120,11 @@
 		      (set-face-attribute 'mode-line-highlight nil
 					  :foreground "gray90"
 					  :box nil)
+		      (global-hl-line-mode t)
+		      (set-face-attribute 'hl-line nil
+					  :inherit nil ; don't inherit highlight from dark theme here
+					  :foreground nil
+					  :background "gray22")
 		      ))))
   (circadian-setup))
 
