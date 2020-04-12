@@ -289,7 +289,7 @@
 ;; show changes on the fly
 ;;
 (use-package diff-hl
-  :init
+  :config
   (global-diff-hl-mode 1)
   (diff-hl-flydiff-mode 1)
   (advice-add 'vc-refresh-state :after #'diff-hl-update))
@@ -328,7 +328,7 @@
 ;; which-key
 ;;
 (use-package which-key
-  :init (which-key-mode))
+  :config (which-key-mode))
 
 ;;
 ;; even better search in file
@@ -434,7 +434,8 @@
 ;;
 ;; restart emacs from whitin emacs
 ;;
-(use-package restart-emacs)
+(use-package restart-emacs
+  :defer t)
 
 ;;
 ;; google helper
@@ -492,7 +493,8 @@
 
 
 (use-package yasnippet) ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
-(use-package company-lsp)
+(use-package company-lsp
+  :defer t)
 
 (use-package lsp-ui
   :config
@@ -512,7 +514,8 @@
   :bind ("C-c h" . lsp-ui-doc-glance)
   )
 
-(use-package ccls) ; C Language Server
+(use-package ccls
+  :defer t) ; C Language Server
 
 
 
@@ -587,5 +590,6 @@
 ;; Rust
 ;;
 (use-package rust-mode
+  :defer t
   :config (setq rust-format-on-save t))
 
