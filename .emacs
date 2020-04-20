@@ -456,6 +456,12 @@
 (use-package paradox
   :config (paradox-enable))
 
+;;
+;; compare files side by side
+;;
+(use-package vdiff
+  :defer t
+  :config (setq vdiff-auto-refine t))
 
 ;;
 ;; autocompletion
