@@ -187,7 +187,10 @@
 
   ;; use winner mode.
   (winner-mode 1)
-  
+
+  ;; windmove keybindings
+  (windmove-default-keybindings)
+
   ;; set f5 hotkey to invoke make
   (global-set-key [f5] 'projectile-compile-project)
 
@@ -389,7 +392,6 @@
   (treemacs-git-mode 'simple)
   (treemacs-tag-follow-mode t)
   (treemacs-follow-mode t)
-  (setq treemacs-is-never-other-window t)
   :bind  ("C-x t" . treemacs-select-window); switch over to treemacs
   :init
   (treemacs)
