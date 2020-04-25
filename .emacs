@@ -504,6 +504,20 @@
   (setq lsp-rust-server (quote rust-analyzer))
   :bind ("C-c r" . lsp-rename))
 
+(use-package posframe) ; for dap-ui-controls
+(use-package dap-mode
+  :bind ("C-c d" . dap-debug-last)
+  :config
+  ;; pull in support for gdb
+  (require 'dap-gdb-lldb)
+  (dap-mode 1)
+  ;; show fringe indicators for errors and breakpoints and the like
+  (dap-ui-mode 1)
+  ;; displays floating panel with debug buttons, requires emacs 26+ and posframe package
+  (dap-ui-controls-mode 1)
+  ;; automatically trigger the hydra when the program hits a breakpoint
+  (add-hook 'dap-stopped-hook (lambda (arg) (call-interactively #'dap-hydra)))
+  )
 
 (use-package yasnippet ; if lsp-enable-snippets is still on, company-lsp will always insert extra spaces
   :hook (lsp-mode . yas-minor-mode))
