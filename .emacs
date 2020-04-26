@@ -188,8 +188,11 @@
   ;; use winner mode.
   (winner-mode 1)
 
-  ;; windmove keybindings
-  (windmove-default-keybindings)
+  ;; windmove keybindings (that do not interfere with selection)
+  (global-set-key (kbd "S-M-<left>")  'windmove-left)
+  (global-set-key (kbd "S-M-<right>") 'windmove-right)
+  (global-set-key (kbd "S-M-<up>")    'windmove-up)
+  (global-set-key (kbd "S-M-<down>")  'windmove-down)
 
   ;; set f5 hotkey to invoke make
   (global-set-key [f5] 'projectile-compile-project)
