@@ -504,6 +504,7 @@
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-file-watch-threshold nil)
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (defun after-lsp () (when (derived-mode-p 'sh-mode) (eldoc-mode -1)))
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
   (setq lsp-rust-server (quote rust-analyzer))
