@@ -513,6 +513,8 @@
 (use-package posframe) ; for dap-ui-controls
 (use-package dap-mode
   :bind ("C-c d" . dap-debug-last)
+  :init
+  (setq dap-auto-configure-features '(sessions locals breakpoints expressions controls)) ; https://github.com/emacs-lsp/dap-mode/issues/314
   :config
   ;; pull in support for gdb
   (require 'dap-gdb-lldb)
