@@ -547,6 +547,7 @@
   ;; custom sideline
   (setq lsp-ui-sideline-show-diagnostics nil) ; handled by flycheck-inline
   (set-face-attribute 'lsp-ui-sideline-code-action nil :foreground "dark green")
+  :bind ("M-RET" . lsp-ui-sideline-apply-code-actions)
   :bind ("C-c h" . lsp-ui-doc-glance)
   )
 
