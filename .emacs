@@ -22,15 +22,28 @@
 ;; make elpa usable again
 (use-package gnu-elpa-keyring-update)
 
-;;
-;; tabs, https://amitp.blogspot.com/2018/10/emacs-prettier-tabbar.html
-;;
-(use-package tabbar
+
+;; modern alternative to tabbar, uses Emacs 27 tab-line
+(use-package centaur-tabs
   :config
-  (customize-set-variable 'tabbar-separator '(1))
-  (set-face-attribute 'tabbar-button nil
-		      :box nil)
-  (tabbar-mode 1))
+  (centaur-tabs-headline-match)
+  (setq centaur-tabs-set-icons t)
+  (centaur-tabs-mode t)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward)
+  :hook
+  (dashboard-mode . centaur-tabs-local-mode))
+
+(use-package doom-themes
+  :config
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config)
+  ;; highlight comments for doom-one-light
+  (setq doom-one-light-brighter-comments t)
+  (setq doom-one-light-comment-bg nil)
+  ;; leaving out treemacs config for now, might be added later...
+  )
 
 
 ;;
@@ -38,93 +51,20 @@
 ;;
 (use-package circadian
   :config
-  (setq calendar-location-name "Berlin") 
+  (setq calendar-location-name "Berlin")
   (setq calendar-latitude 52.30)
   (setq calendar-longitude 13.25)
-  (setq circadian-themes '((:sunrise . tango)
-			   (:sunset  . tango-dark)))
+  (setq circadian-themes '((:sunrise . doom-one-light)
+			   (:sunset  . doom-zenburn)))
   (add-hook 'circadian-after-load-theme-hook
 	    #'(lambda (theme)
-		(if (string-equal theme "tango")
+		(if (string-equal theme "doom-one-light")
 		    (progn
-		      (message "adapting for tango")
-		      (set-face-attribute 'tabbar-default nil
-					  :background "gray"
-					  :foreground "gray60"
-					  :distant-foreground "gray50"
-					  :box nil)
-		      (set-face-attribute 'tabbar-unselected nil
-					  :foreground "black"
-					  :box nil)
-		      (set-face-attribute 'tabbar-modified nil
-					  :foreground "red4"
-					  :box nil
-					  :inherit 'tabbar-unselected)
-		      (set-face-attribute 'tabbar-selected nil
-					  :background "#4090c0"
-					  :foreground "white"
-					  :box nil)
-		      (set-face-attribute 'tabbar-selected-modified nil
-					  :inherit 'tabbar-selected
-					  :foreground "GoldenRod2"
-					  :box nil)
-
-		      (set-face-attribute 'mode-line-inactive nil
-					  :foreground "gray40"
-					  :background "gray90"
-					  :box nil)
-		      (set-face-attribute 'mode-line nil
-					  :foreground "gray10"
-					  :background "gray80"
-					  :box nil)
-		      (set-face-attribute 'mode-line-highlight nil
-					  :foreground "gray50"
-					  :box nil)
-		      (global-hl-line-mode t)
-		      (set-face-background hl-line-face "gray88")
+		      (message "adapting for doom-one-light")
 		      ))
-		(if (string-equal theme "tango-dark")
+		(if (string-equal theme "doom-zenburn")
 		    (progn
-		      (message "adapting for tango-dark")
-		      (set-face-attribute 'tabbar-default nil
-					  :background "gray25"
-					  :foreground "gray60"
-					  :distant-foreground "gray50"
-					  :box nil)
-		      (set-face-attribute 'tabbar-unselected nil
-					  :foreground "gray60"
-					  :box nil)
-		      (set-face-attribute 'tabbar-modified nil
-					  :foreground "OrangeRed1"
-					  :box nil
-					  :inherit 'tabbar-unselected)
-		      (set-face-attribute 'tabbar-selected nil
-					  :background "SteelBlue4"
-					  :foreground "white"
-					  :box nil)
-		      (set-face-attribute 'tabbar-selected-modified nil
-					  :inherit 'tabbar-selected
-					  :foreground "orange"
-					  :box nil)
-		      
-		      (set-face-foreground 'vertical-border "gray30")
-
-		      (set-face-attribute 'mode-line-inactive nil
-					  :foreground "gray40"
-					  :background "gray20"
-					  :box nil)
-		      (set-face-attribute 'mode-line nil
-					  :foreground "gray70"
-					  :background "gray30"
-					  :box nil)
-		      (set-face-attribute 'mode-line-highlight nil
-					  :foreground "gray90"
-					  :box nil)
-		      (global-hl-line-mode t)
-		      (set-face-attribute 'hl-line nil
-					  :inherit nil ; don't inherit highlight from dark theme here
-					  :foreground nil
-					  :background "gray22")
+		      (message "adapting for doom-zenburn")
 		      ))))
   (circadian-setup))
 
@@ -241,13 +181,14 @@
   ;; paren matching on
   (show-paren-mode t)
 
+  ;; highlight current line
+  (global-hl-line-mode t)
+
   ;; line numbers
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
   ;; show current function or similar thing in modeline
   (which-function-mode 1)
-  (set-face-attribute 'which-func nil
-		      :foreground "magenta")
 
   ;; highlight trailing whitespace
   (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
@@ -546,7 +487,6 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   ;; custom sideline
   (setq lsp-ui-sideline-show-diagnostics nil) ; handled by flycheck-inline
-  (set-face-attribute 'lsp-ui-sideline-code-action nil :foreground "green3")
   :bind ("M-RET" . lsp-ui-sideline-apply-code-actions)
   :bind ("C-c h" . lsp-ui-doc-glance)
   )
