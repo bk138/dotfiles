@@ -28,6 +28,7 @@
   :config
   (centaur-tabs-headline-match)
   (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-gray-out-icons 'buffer)
   (centaur-tabs-mode t)
   :bind
   ("C-<prior>" . centaur-tabs-backward)
