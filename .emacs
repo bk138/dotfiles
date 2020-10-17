@@ -71,6 +71,19 @@
 
 
 ;;
+;; dim inactive buffers
+;;
+(use-package dimmer
+  :config
+  (dimmer-configure-which-key)
+  (dimmer-configure-company-box)
+  (dimmer-configure-magit)
+  (dimmer-configure-posframe)
+  (dimmer-configure-hydra)
+  (dimmer-mode t))
+
+
+;;
 ;; highlight doxygen comments
 ;;
 (use-package highlight-doxygen
