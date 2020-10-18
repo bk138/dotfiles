@@ -62,10 +62,20 @@
 		(if (string-equal theme "doom-one-light")
 		    (progn
 		      (message "adapting for doom-one-light")
+		      ;; have to re-set those, otherwise modeline is too wide and cut off
+		      (setq doom-modeline-height 1)
+		      (set-face-attribute 'mode-line nil :height 0.95)
+		      (set-face-attribute 'mode-line-inactive nil :height 0.95)
+
 		      ))
 		(if (string-equal theme "doom-zenburn")
 		    (progn
 		      (message "adapting for doom-zenburn")
+		      ;; have to re-set those, otherwise modeline is too wide and cut off
+		      (setq doom-modeline-height 1)
+		      (set-face-attribute 'mode-line nil :height 0.95)
+		      (set-face-attribute 'mode-line-inactive nil :height 0.95)
+
 		      ))))
   (circadian-setup))
 
@@ -100,9 +110,6 @@
 ;; way faster than spaceline and more to my liking than powerline, not as basic as moodline
 (use-package doom-modeline
   :config
-  (setq doom-modeline-height 1)
-  (set-face-attribute 'mode-line nil :height 0.95)
-  (set-face-attribute 'mode-line-inactive nil :height 0.95)
   ;; show process status of inactive buffers coloured as well
   (doom-modeline-def-segment process
   "The process info, always coloured"
