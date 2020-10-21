@@ -25,6 +25,7 @@
 
 ;; modern alternative to tabbar, uses Emacs 27 tab-line
 (use-package centaur-tabs
+  :demand
   :config
   (centaur-tabs-headline-match)
   (setq centaur-tabs-set-icons t)
