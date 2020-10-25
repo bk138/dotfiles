@@ -56,13 +56,13 @@
   (setq calendar-location-name "Berlin")
   (setq calendar-latitude 52.30)
   (setq calendar-longitude 13.25)
-  (setq circadian-themes '((:sunrise . doom-one-light)
+  (setq circadian-themes '((:sunrise . doom-acario-light)
 			   (:sunset  . doom-zenburn)))
   (add-hook 'circadian-after-load-theme-hook
 	    #'(lambda (theme)
-		(if (string-equal theme "doom-one-light")
+		(if (string-equal theme "doom-acario-light")
 		    (progn
-		      (message "adapting for doom-one-light")
+		      (message "adapting for doom-acario-light")
 		      ;; have to re-set those, otherwise modeline is too wide and cut off
 		      (setq doom-modeline-height 1)
 		      (set-face-attribute 'mode-line nil :height 0.95)
