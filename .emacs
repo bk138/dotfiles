@@ -63,6 +63,8 @@
 		(if (string-equal theme "doom-acario-light")
 		    (progn
 		      (message "adapting for doom-acario-light")
+		      ;; reset to default
+		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "dim gray")(deprecated :strike-through t)))
 		      ;; have to re-set those, otherwise modeline is too wide and cut off
 		      (setq doom-modeline-height 1)
 		      (set-face-attribute 'mode-line nil :height 0.95)
@@ -75,6 +77,8 @@
 		      (eval-after-load 'magit
 			'(progn
 			   (set-face-background 'magit-diff-hunk-heading-highlight "#7bb8bb")))
+		      ;; make these more readable
+		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "gray80")(deprecated :strike-through t)))
 		      ;; have to re-set those, otherwise modeline is too wide and cut off
 		      (setq doom-modeline-height 1)
 		      (set-face-attribute 'mode-line nil :height 0.95)
@@ -468,7 +472,6 @@
 (use-package lsp-mode
   :hook (prog-mode . lsp)
   :config
-  (setq lsp-diagnostics-attributes '((unnecessary :foreground "gray80")(deprecated :strike-through t)))
   (setq lsp-prefer-flymake nil)
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
