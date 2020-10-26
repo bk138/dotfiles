@@ -468,6 +468,7 @@
 (use-package lsp-mode
   :hook (prog-mode . lsp)
   :config
+  (setq lsp-diagnostics-attributes '((unnecessary :foreground "gray80")(deprecated :strike-through t)))
   (setq lsp-prefer-flymake nil)
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
