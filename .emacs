@@ -259,7 +259,7 @@
 ;; background colour names with their colour
 (use-package rainbow-mode
   :hook (prog-mode . rainbow-mode)
-  :config (add-hook 'c-mode-hook 'rainbow-turn-off))
+  :config (add-hook 'c-mode-common-hook 'rainbow-turn-off))
 
 ;;
 ;; set indentation
