@@ -223,7 +223,7 @@
   (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
 
   ;; C indent settings
-  (setq c-basic-offset 4)
+  (setq-default c-basic-offset 4)
 
   ;; objc-mode tweaks
   (add-to-list 'magic-mode-alist
@@ -475,7 +475,10 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
-  (defun after-lsp () (when (derived-mode-p 'sh-mode) (eldoc-mode -1)))
+  (defun after-lsp ()
+    (progn
+      (when (derived-mode-p 'c-mode) (setq lsp-enable-indentation nil))
+      (when (derived-mode-p 'sh-mode) (eldoc-mode -1))))
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
   (setq lsp-rust-server (quote rust-analyzer))
   :bind ("C-c r" . lsp-rename))
