@@ -473,6 +473,7 @@
   :hook (prog-mode . lsp)
   :config
   (setq lsp-prefer-flymake nil)
+  (setq lsp-headerline-breadcrumb-mode nil) ;; we have lsp-treemacs for this
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (defun after-lsp ()
