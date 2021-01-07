@@ -76,7 +76,8 @@
 		      (message "adapting for doom-zenburn")
 		      (eval-after-load 'magit
 			'(progn
-			   (set-face-background 'magit-diff-hunk-heading-highlight "#7bb8bb")))
+			   (set-face-background 'magit-diff-hunk-heading-highlight "#7bb8bb")
+			   (set-face-attribute 'magit-header-line nil :background "#4f4f4f" :box nil)))
 		      ;; make these more readable
 		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "gray80")(deprecated :strike-through t)))
 		      (set-face-attribute 'shadow nil :foreground "#7F7F7F")
