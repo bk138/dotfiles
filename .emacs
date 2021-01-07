@@ -81,6 +81,9 @@
 		      ;; make these more readable
 		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "gray80")(deprecated :strike-through t)))
 		      (set-face-attribute 'shadow nil :foreground "#7F7F7F")
+		      (eval-after-load 'markdown-mode
+			'(progn
+			   (set-face-attribute 'markdown-markup-face nil :foreground "#ff6655")))
 		      ;; have to re-set those, otherwise modeline is too wide and cut off
 		      (setq doom-modeline-height 1)
 		      (set-face-attribute 'mode-line nil :height 0.95)
