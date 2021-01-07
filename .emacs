@@ -79,6 +79,7 @@
 			   (set-face-background 'magit-diff-hunk-heading-highlight "#7bb8bb")))
 		      ;; make these more readable
 		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "gray80")(deprecated :strike-through t)))
+		      (set-face-attribute 'shadow nil :foreground "#7F7F7F")
 		      ;; have to re-set those, otherwise modeline is too wide and cut off
 		      (setq doom-modeline-height 1)
 		      (set-face-attribute 'mode-line nil :height 0.95)
