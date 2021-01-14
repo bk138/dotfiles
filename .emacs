@@ -41,9 +41,6 @@
   :config
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  ;; highlight comments for doom-one-light
-  (setq doom-one-light-brighter-comments t)
-  (setq doom-one-light-comment-bg nil)
   ;; leaving out treemacs config for now, might be added later...
   )
 
