@@ -464,9 +464,6 @@
   :init (global-flycheck-mode)
   :bind ("C-c f" . flycheck-list-errors))
 
-(use-package flycheck-inline
-  :hook (flycheck-mode . flycheck-inline-mode)
-  :config (setq flycheck-display-errors-delay 0))
 
 ;;
 ;; LSP
@@ -519,7 +516,6 @@
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   ;; custom sideline
-  (setq lsp-ui-sideline-show-diagnostics nil) ; handled by flycheck-inline
   :bind ("M-RET" . lsp-ui-sideline-apply-code-actions)
   :bind ("C-c h" . lsp-ui-doc-glance)
   )
