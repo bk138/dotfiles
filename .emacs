@@ -596,7 +596,7 @@
 ;;
 ;; Rust
 ;;
-(use-package rust-mode
+(use-package rustic ; use rustic over rust-mode mainly because of the nicer cargo test integration
   :defer t)
 
 
