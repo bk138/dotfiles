@@ -475,6 +475,7 @@
   (setq lsp-headerline-breadcrumb-enable nil) ;; we have lsp-treemacs for this
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  (setq lsp-signature-function 'lsp-signature-posframe)
   (defun after-lsp ()
     (progn
       (when (derived-mode-p 'c-mode) (setq lsp-enable-indentation nil))
