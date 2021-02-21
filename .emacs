@@ -519,7 +519,7 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   ;; custom sideline
   :bind ("M-RET" . lsp-ui-sideline-apply-code-actions)
-  :bind ("C-c h" . lsp-ui-doc-glance)
+  :bind ("C-c h" . lsp-ui-doc-show)
   )
 
 (use-package ccls
