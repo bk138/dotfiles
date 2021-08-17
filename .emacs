@@ -218,6 +218,9 @@
   ;; line numbers
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
+  ;; show columns and lines in modeline
+  (setq column-number-mode t)
+
   ;; show current function or similar thing in modeline
   (which-function-mode 1)
 
