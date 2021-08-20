@@ -479,6 +479,7 @@
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-signature-function 'lsp-signature-posframe)
+  (setq lsp-rust-analyzer-proc-macro-enable t)
   (defun after-lsp ()
     (progn
       (when (derived-mode-p 'c-mode) (setq lsp-enable-indentation nil))
