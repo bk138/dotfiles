@@ -480,13 +480,16 @@
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-signature-function 'lsp-signature-posframe)
   (setq lsp-rust-analyzer-proc-macro-enable t)
+  (setq lsp-treemacs-error-list-current-project-only t)
   (defun after-lsp ()
     (progn
       (when (derived-mode-p 'c-mode) (setq lsp-enable-indentation nil))
       (when (derived-mode-p 'sh-mode) (eldoc-mode -1))))
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
   (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (projectile-save-project-buffers)))
-  :bind ("C-c r" . lsp-rename))
+  :bind ("C-c r" . lsp-rename)
+  :bind ("C-c l" . lsp-treemacs-errors-list)
+  )
 
 (use-package posframe) ; for dap-ui-controls
 (use-package dap-mode
