@@ -605,6 +605,8 @@
 ;; Rust
 ;;
 (use-package rustic ; use rustic over rust-mode mainly because of the nicer cargo test integration
-  :defer t)
+  :defer t
+  ;; and nicer compile mode with colours
+  :bind ("<f5>" . rustic-compile))
 
 
