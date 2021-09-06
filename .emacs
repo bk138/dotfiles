@@ -480,6 +480,7 @@
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-signature-function 'lsp-signature-posframe)
   (setq lsp-rust-analyzer-proc-macro-enable t)
+  (setq lsp-rust-analyzer-diagnostics-disabled ["unresolved-macro-call"]) ;; still false warnings, so disable for the time being
   (setq lsp-treemacs-error-list-current-project-only t)
   (defun after-lsp ()
     (progn
