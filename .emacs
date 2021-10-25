@@ -44,6 +44,7 @@
   ;; leaving out treemacs config for now, might be added later...
   )
 
+(use-package all-the-icons)
 
 ;;
 ;; theme accroding to day/night
