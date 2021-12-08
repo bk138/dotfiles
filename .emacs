@@ -41,7 +41,9 @@
   :config
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  ;; leaving out treemacs config for now, might be added later...
+  ;; treemacs theming
+  (setq doom-themes-treemacs-theme "doom-colors")
+  (doom-themes-treemacs-config)
   )
 
 (use-package all-the-icons)
