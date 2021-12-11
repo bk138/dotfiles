@@ -463,7 +463,9 @@
 ;; LSP
 ;;
 (use-package lsp-mode
-  :hook (prog-mode . lsp)
+  :init (setq lsp-keymap-prefix "C-c l")
+  :hook ((prog-mode . lsp)
+	 (lsp-mode . lsp-enable-which-key-integration))
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-headerline-breadcrumb-enable nil) ;; we have lsp-treemacs for this
@@ -480,7 +482,6 @@
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
   (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (projectile-save-project-buffers)))
   :bind ("C-c r" . lsp-rename)
-  :bind ("C-c l" . lsp-treemacs-errors-list)
   )
 
 (use-package posframe) ; for dap-ui-controls
