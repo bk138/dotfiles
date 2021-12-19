@@ -516,6 +516,8 @@
   :bind ("C-c h" . lsp-ui-doc-show)
   )
 
+(use-package lsp-treemacs)
+
 (use-package ccls
   :defer t) ; C Language Server
 
