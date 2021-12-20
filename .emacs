@@ -60,6 +60,8 @@
 			   (:sunset  . doom-zenburn)))
   (add-hook 'circadian-after-load-theme-hook
 	    #'(lambda (theme)
+		;; fixes grey icon background when switching from light to dark theme
+		(centaur-tabs-init-tabsets-store)
 		(if (string-equal theme "doom-acario-light")
 		    (progn
 		      (message "adapting for doom-acario-light")
