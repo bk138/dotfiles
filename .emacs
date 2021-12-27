@@ -428,6 +428,7 @@
 ;;
 (use-package paradox
   :config (paradox-enable))
+(use-package async) ; for upgrades in the background
 
 ;;
 ;; compare files side by side
