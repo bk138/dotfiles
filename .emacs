@@ -340,6 +340,9 @@
 
 (use-package smex) ; counsel-M-x will use this for recently-used
 
+(use-package marginalia ; show item doc in minibuffer
+  :init (marginalia-mode))
+
 (use-package counsel-projectile
   :after projectile
   :config
