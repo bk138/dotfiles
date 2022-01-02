@@ -35,7 +35,8 @@
   ("C-<prior>" . centaur-tabs-backward)
   ("C-<next>" . centaur-tabs-forward)
   :hook
-  (dashboard-mode . centaur-tabs-local-mode))
+  (dashboard-mode . centaur-tabs-local-mode)
+  (git-commit-mode . centaur-tabs-local-mode))
 
 (use-package doom-themes
   :config
