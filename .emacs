@@ -515,6 +515,13 @@
   ;; Show the peek view even if there is only 1 cross reference
   (setq lsp-ui-peek-always-show t)
   (setq lsp-ui-peek-fontify (quote always))
+  ;; sideline config
+  (setq lsp-ui-sideline-show-diagnostics t)
+  (setq lsp-ui-sideline-show-hover t)
+  (setq lsp-ui-sideline-show-code-actions t)
+  ;; doc popup config
+  (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-ui-doc-show-with-mouse nil)
   ;; remap xref bindings to use peek
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
