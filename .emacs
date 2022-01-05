@@ -456,6 +456,9 @@
   :bind
   ("TAB" . indent-or-complete))
 
+;; nicer company frontend, also more compact in terms of screen real estate
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 
 
 ;;
