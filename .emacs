@@ -482,6 +482,8 @@
   (setq lsp-headerline-breadcrumb-enable nil) ;; we have lsp-treemacs for this
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  (setq gc-cons-threshold 100000000)
+  (setq lsp-use-plists t)
   (setq lsp-signature-function 'lsp-signature-posframe)
   (setq lsp-rust-analyzer-proc-macro-enable t)
   (setq lsp-rust-analyzer-diagnostics-disabled ["unresolved-macro-call"]) ;; still false warnings, so disable for the time being
