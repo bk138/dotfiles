@@ -523,6 +523,8 @@
   (setq lsp-ui-sideline-show-diagnostics t)
   (setq lsp-ui-sideline-show-hover t)
   (setq lsp-ui-sideline-show-code-actions t)
+  (setq lsp-ui-sideline-diagnostic-max-line-length 80) ; we have treemacs taking up space
+  (setq lsp-ui-sideline-ignore-duplicate t)
   ;; doc popup config
   (setq lsp-ui-doc-show-with-cursor nil)
   (setq lsp-ui-doc-show-with-mouse nil)
