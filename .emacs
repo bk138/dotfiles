@@ -453,6 +453,7 @@
     (if (or (looking-at "\\_>") (looking-back "->" 2) (looking-back "\\." 1))
         (company-complete-common)
       (indent-according-to-mode)))
+  (setq company-tooltip-limit 20)
   :bind
   ("TAB" . indent-or-complete))
 
