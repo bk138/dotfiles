@@ -539,8 +539,11 @@
 
 (use-package lsp-treemacs)
 
+;; C Language Server
 (use-package ccls
-  :defer t) ; C Language Server
+  :defer t
+  :config (setq lsp-lens-enable nil) ; takes ages with large header files
+  )
 
 
 
