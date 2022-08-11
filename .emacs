@@ -364,6 +364,7 @@
       (define-key treemacs-mode-map [wheel-up] (lambda () (interactive) (treemacs-select-window) (scroll-down 5)))
       (define-key treemacs-mode-map [wheel-down] (lambda () (interactive) (treemacs-select-window) (scroll-up 5)))
       ))
+  (setq treemacs-select-when-already-in-treemacs 'stay) ; don't jump back to recently used file when scrolling
   (treemacs-git-mode 'simple)
   (treemacs-tag-follow-mode t)
   (treemacs-follow-mode t)
