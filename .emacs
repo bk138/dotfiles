@@ -476,9 +476,13 @@
 ;;
 (use-package lsp-mode
   :init (setq lsp-keymap-prefix "C-c l")
-  :hook ((prog-mode . lsp)
-	 (lsp-mode . lsp-enable-which-key-integration))
+  :hook (lsp-mode . lsp-enable-which-key-integration)
   :config
+  (defun dotfiles--lsp-if-supported ()
+    "Run `lsp' if it's a supported mode."
+    (unless (derived-mode-p 'emacs-lisp-mode)
+      (lsp)))
+  (add-hook 'prog-mode-hook #'dotfiles--lsp-if-supported)
   (setq lsp-prefer-flymake nil)
   (setq lsp-headerline-breadcrumb-enable nil) ;; we have lsp-treemacs for this
   (setq lsp-file-watch-threshold nil)
