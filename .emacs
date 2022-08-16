@@ -417,6 +417,11 @@
     (exec-path-from-shell-initialize)))
 
 ;;
+;; a terminal that does'nt suck
+;;
+(use-package vterm)
+
+;;
 ;; restart emacs from whitin emacs
 ;;
 (use-package restart-emacs
