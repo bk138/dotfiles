@@ -417,9 +417,10 @@
     (exec-path-from-shell-initialize)))
 
 ;;
-;; a terminal that does'nt suck
+;; a terminal that doesn't suck
 ;;
-(use-package vterm)
+(use-package vterm
+  :defer t)
 
 ;;
 ;; restart emacs from whitin emacs
