@@ -272,6 +272,7 @@
 ;; show changes on the fly
 ;;
 (use-package diff-hl
+  :defer 1
   :config
   (global-diff-hl-mode 1)
   (diff-hl-flydiff-mode 1)
