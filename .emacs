@@ -565,6 +565,7 @@
 ;; projectile helps setting the right compilation command, and quite some stuff more
 ;;
 (use-package projectile
+  :defer 1
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
