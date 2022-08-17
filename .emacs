@@ -412,9 +412,10 @@
 ;; find external programs on OSX and other platforms
 ;;
 (use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
   :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)))
+  (exec-path-from-shell-initialize))
+
 
 ;;
 ;; a terminal that doesn't suck
