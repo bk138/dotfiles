@@ -20,7 +20,8 @@
   (setq use-package-always-ensure t))
 
 ;; make elpa usable again
-(use-package gnu-elpa-keyring-update)
+(use-package gnu-elpa-keyring-update
+    :defer 1)
 
 
 ;; modern alternative to tabbar, uses Emacs 27 tab-line
@@ -439,6 +440,7 @@
 ;; nicer package menu
 ;;
 (use-package paradox
+  :defer 1
   :config (paradox-enable))
 (use-package async) ; for upgrades in the background
 
