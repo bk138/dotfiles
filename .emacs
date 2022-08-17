@@ -39,6 +39,10 @@
   (dashboard-mode . centaur-tabs-local-mode)
   (git-commit-mode . centaur-tabs-local-mode))
 
+;; make sure lsp-treemacs is loaded before doom-themes,
+;; kinda ugly workaround for https://github.com/emacs-lsp/lsp-treemacs/issues/89
+(use-package lsp-treemacs)
+
 (use-package doom-themes
   :config
   ;; Corrects (and improves) org-mode's native fontification.
@@ -554,7 +558,6 @@
   :bind ("C-c h" . lsp-ui-doc-show)
   )
 
-(use-package lsp-treemacs)
 
 ;; C Language Server
 (use-package ccls
