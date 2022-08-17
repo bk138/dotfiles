@@ -330,7 +330,7 @@
   (setq ivy-wrap t)) ; wrap around
 
 (use-package counsel ; use ivy in more places
-  :init (counsel-mode)
+  :config (counsel-mode)
   :bind
   ("C-c g" . counsel-git) ; search file in current git project
   ("C-c j" . counsel-git-grep) ; search regexp in current project via git grep
