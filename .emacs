@@ -434,6 +434,7 @@
 ;; google helper
 ;;
 (use-package google-this
+  :defer 1
   :config (google-this-mode 1))
 
 ;;
