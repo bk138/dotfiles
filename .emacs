@@ -650,5 +650,8 @@
 	      ("<f5>" . rustic-compile))
   )
 
-
+;;
+;; NSIS
+;;
+(use-package nsis-mode)
 
