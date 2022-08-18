@@ -344,6 +344,11 @@
   ("C-x l" . counsel-locate)
   ("C-c i" . counsel-imenu)) ; list things in file
 
+(use-package ivy-emoji ; nice 🌴 insert
+  :bind ("C-c e" . ivy-emoji)
+  :config (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
+)
+
 (use-package smex) ; counsel-M-x will use this for recently-used
 
 (use-package marginalia ; show item doc in minibuffer
