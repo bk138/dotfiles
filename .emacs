@@ -344,9 +344,20 @@
   ("C-x l" . counsel-locate)
   ("C-c i" . counsel-imenu)) ; list things in file
 
+(use-package company-emoji) ; we just use its symbol list for ivy-emoji
 (use-package ivy-emoji ; nice 🌴 insert
   :bind ("C-c e" . ivy-emoji)
-  :config (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
+  :after (company-emoji)
+  :config
+  ;; https://github.com/Sbozzolo/ivy-emoji#installation to use company-emoji's list
+  (require 'company-emoji-list)
+  (setq ivy-emoji-list
+	(mapcar '(lambda (emoji)
+                   (concat
+                    (get-text-property 0 :unicode emoji) " "
+                    (substring-no-properties emoji)))     ;; Print the name
+		(company-emoji-list-create)))
+  (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
 )
 
 (use-package smex) ; counsel-M-x will use this for recently-used
