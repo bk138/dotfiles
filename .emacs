@@ -318,6 +318,7 @@
 ;; which-key
 ;;
 (use-package which-key
+  :defer 1
   :config (which-key-mode))
 
 ;;
@@ -501,7 +502,8 @@
 ;; flycheck syntax checker
 ;;
 (use-package flycheck
-  :init (global-flycheck-mode)
+  :defer 1
+  :config (global-flycheck-mode)
   :bind ("C-c f" . flycheck-list-errors))
 
 
