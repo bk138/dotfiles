@@ -174,7 +174,7 @@
   (global-set-key (kbd "C-c o") 'ff-find-other-file)
 
   ;; show man page
-  (global-set-key (kbd "C-c m") 'manual-entry)
+  (global-set-key (kbd "C-h M") 'manual-entry)
 
   ;; disable mouse whell scroll accel
   (setq mouse-wheel-progressive-speed nil)
