@@ -346,7 +346,8 @@
   ("C-x l" . counsel-locate)
   ("C-c i" . counsel-imenu)) ; list things in file
 
-(use-package company-emoji) ; we just use its symbol list for ivy-emoji
+(use-package company-emoji  ; we just use its symbol list for ivy-emoji
+    :defer 1)
 (use-package ivy-emoji ; nice 🌴 insert
   :bind ("C-c e" . ivy-emoji)
   :after (company-emoji)
