@@ -41,7 +41,9 @@
 
 ;; make sure lsp-treemacs is loaded before doom-themes,
 ;; kinda ugly workaround for https://github.com/emacs-lsp/lsp-treemacs/issues/89
-(use-package lsp-treemacs)
+(use-package lsp-treemacs
+  :init
+  (setq lsp-keymap-prefix "C-c l"))
 
 (use-package doom-themes
   :config
