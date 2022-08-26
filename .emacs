@@ -73,11 +73,6 @@
 		      (message "adapting for doom-acario-light")
 		      ;; reset to default
 		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "dim gray")(deprecated :strike-through t)))
-		      ;; have to re-set those, otherwise modeline is too wide and cut off
-		      (setq doom-modeline-height 1)
-		      (set-face-attribute 'mode-line nil :height 0.95)
-		      (set-face-attribute 'mode-line-inactive nil :height 0.95)
-
 		      ))
 		(if (string-equal theme "doom-zenburn")
 		    (progn
@@ -92,11 +87,6 @@
 		      (eval-after-load 'markdown-mode
 			'(progn
 			   (set-face-attribute 'markdown-markup-face nil :foreground "#ff6655")))
-		      ;; have to re-set those, otherwise modeline is too wide and cut off
-		      (setq doom-modeline-height 1)
-		      (set-face-attribute 'mode-line nil :height 0.95)
-		      (set-face-attribute 'mode-line-inactive nil :height 0.95)
-
 		      ))))
   (circadian-setup))
 
