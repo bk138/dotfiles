@@ -214,6 +214,8 @@
 
   ;; show current function or similar thing in modeline
   (which-function-mode 1)
+  (advice-add 'which-function :filter-return
+              (lambda (s) (nth 0 (split-string s))))
 
   ;; highlight trailing whitespace
   (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
