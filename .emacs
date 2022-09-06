@@ -242,8 +242,6 @@
   (load custom-file 'noerror)
   )
 
-(use-package good-scroll
-  :config (good-scroll-mode 1))
 
 ;; and also surrounding ones ;;-)
 (use-package highlight-parentheses
