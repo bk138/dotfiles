@@ -534,6 +534,7 @@
 (use-package dap-mode
   :bind ("C-c d" . dap-debug-last)
   :config
+  (setq dap-auto-configure-features '(sessions locals breakpoints expressions controls)) ; https://github.com/emacs-lsp/dap-mode/issues/314
   ;; pull in support for gdb
   (require 'dap-gdb-lldb)
   (dap-mode 1)
