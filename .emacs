@@ -384,7 +384,6 @@
       ))
   (setq treemacs-select-when-already-in-treemacs 'stay) ; don't jump back to recently used file when scrolling
   (treemacs-git-mode 'simple)
-  (treemacs-tag-follow-mode t)
   (treemacs-follow-mode t)
   :bind  ("C-x t" . treemacs-select-window); switch over to treemacs
   :init
