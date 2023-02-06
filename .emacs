@@ -102,10 +102,14 @@
 
 
 ;;
-;; highlight numbers
+;; fast syntax highlight via tree-sitter
 ;;
-(use-package highlight-numbers
-  :hook (prog-mode . highlight-numbers-mode))
+(use-package tree-sitter-langs)
+(use-package tree-sitter
+  :after (tree-sitter-langs)
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 
 ;; way faster than spaceline and more to my liking than powerline, not as basic as moodline
