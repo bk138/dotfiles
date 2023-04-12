@@ -216,6 +216,9 @@
   ;; show columns and lines in modeline
   (setq column-number-mode t)
 
+  ;; more undo
+  (setq undo-limit 16000000)
+
   ;; show current function or similar thing in modeline
   (which-function-mode 1)
   (advice-add 'which-function :filter-return
