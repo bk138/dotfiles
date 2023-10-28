@@ -247,6 +247,9 @@
   ;; have those custom-set-variables in a separate file
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file 'noerror)
+
+  ;; don't pop up warnings buffer on background native compilation
+  (setq native-comp-async-report-warnings-errors 'silent)
   )
 
 
