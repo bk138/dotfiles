@@ -206,6 +206,7 @@
 
   ;; paren matching on
   (show-paren-mode t)
+  (setq show-paren-context-when-offscreen 'overlay)
 
   ;; highlight current line
   (global-hl-line-mode t)
