@@ -172,12 +172,8 @@
   ;; show man page
   (global-set-key (kbd "C-h M") 'manual-entry)
 
-  ;; disable mouse whell scroll accel
-  (setq mouse-wheel-progressive-speed nil)
-
-  ;; make scrolling less laggy by applying some optimisations
-  (setq fast-but-imprecise-scrolling t)
-  (setq inhibit-compacting-font-caches t) ; don't compat font cache on GC
+  ;; finally an OK scroll
+  (pixel-scroll-precision-mode 1)
 
   ;; always use the short y n
   (defalias 'yes-or-no-p 'y-or-n-p)
