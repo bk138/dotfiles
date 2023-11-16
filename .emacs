@@ -413,6 +413,11 @@
 (use-package goto-chg
   :bind ("C-." . goto-last-change))
 
+;;
+;; move line or selection up an down. also sweet!
+;;
+(use-package goto-chg
+  :config (move-text-default-bindings))
 
 ;;
 ;; show recent files
