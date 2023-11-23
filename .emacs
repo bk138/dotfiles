@@ -420,6 +420,13 @@
   :config (move-text-default-bindings))
 
 ;;
+;; mark things at point with increasing region
+;;
+(use-package expand-region
+  :bind ("C-+" . er/expand-region))
+
+
+;;
 ;; show recent files
 ;;
 (use-package recentf
