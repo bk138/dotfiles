@@ -416,7 +416,7 @@
 ;;
 ;; move line or selection up an down. also sweet!
 ;;
-(use-package goto-chg
+(use-package move-text
   :config (move-text-default-bindings))
 
 ;;
