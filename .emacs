@@ -224,6 +224,9 @@
   ;; highlight trailing whitespace
   (add-hook 'prog-mode-hook (lambda ()(setq show-trailing-whitespace 1)))
 
+  ;; use spaces instead of tabs for indent
+  (setq-default indent-tabs-mode nil)
+
   ;; C indent settings
   (setq-default c-basic-offset 4)
 
