@@ -712,3 +712,8 @@
 ;;
 (use-package nsis-mode)
 
+
+;;
+;; Dockerfile
+;;
+(use-package dockerfile-mode)
