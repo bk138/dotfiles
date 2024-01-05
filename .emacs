@@ -644,7 +644,35 @@
 ;; web editing tweaks
 ;;
 (use-package web-mode
-  :mode "\\.html?\\'")
+  :mode "\\.html?\\'"
+  :init
+  (defun indent-region-in-web-mode (start end)
+    "Indent the selected region using web-mode.
+
+     This function indents the specified region according to the
+     indentation rules of the web-mode major mode. It calculates the
+     indentation of the first line in the region and uses it as the
+     baseline for the entire region, preserving the existing
+     indentation style."
+    (interactive "r")
+    (let* ((buffer (generate-new-buffer "*temp-indent-buffer*"))
+           (first-line-indent (save-excursion
+                                (goto-char start)
+                                (beginning-of-line)
+                                (current-indentation))))
+      (unwind-protect
+          (progn
+            (copy-to-buffer buffer start end)
+            (with-current-buffer buffer
+              (web-mode)
+              (goto-char (point-min))
+              (indent-region (point-min) (point-max) nil)
+              (while (re-search-forward "^" nil t)
+                (replace-match (make-string first-line-indent ?\s) nil nil)))
+            (delete-region start end)
+            (insert-buffer-substring buffer))
+        (kill-buffer buffer))))
+  (global-set-key (kbd "C-c I") 'indent-region-in-web-mode))
 
 
 ;;
