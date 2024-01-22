@@ -260,10 +260,10 @@
   :config (setq hl-paren-colors '("red1" "turquoise" "magenta" "dodger blue")))
 
 
-;; highlight indent levels
-(use-package highlight-indent-guides
-  :hook (prog-mode . highlight-indent-guides-mode)
-  :config (setq highlight-indent-guides-method 'character))
+;; highlight indent levels. use a fast package, highlight-indent-guides was slow
+(use-package indent-guide
+  :hook (prog-mode . indent-guide-mode))
+
 
 ;; background colour names with their colour
 (use-package rainbow-mode
