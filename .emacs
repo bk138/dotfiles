@@ -175,9 +175,6 @@
   ;; finally an OK scroll
   (pixel-scroll-precision-mode 1)
 
-  ;; disable screen jump when the cursor moves out of the screen
-  (setq scroll-conservatively 101)
-
   ;; always use the short y n
   (defalias 'yes-or-no-p 'y-or-n-p)
 
