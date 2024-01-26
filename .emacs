@@ -429,7 +429,8 @@
 (use-package recentf
   :bind ("C-x C-r" . recentf-open-files)
   :init
-  (setq recentf-max-menu-items 1000)
+  (setq recentf-max-saved-items 50)
+  (setq recentf-max-menu-items 50)
   (recentf-mode 1))
 
 
