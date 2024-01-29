@@ -667,7 +667,10 @@
             (delete-region start end)
             (insert-buffer-substring buffer))
         (kill-buffer buffer))))
-  (global-set-key (kbd "C-c I") 'indent-region-in-web-mode))
+  (global-set-key (kbd "C-c I") 'indent-region-in-web-mode)
+  :config
+  (setq web-mode-enable-auto-indentation nil)
+  )
 
 
 ;;
