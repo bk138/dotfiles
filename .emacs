@@ -677,7 +677,10 @@
 ;; PHP
 ;;
 (use-package php-mode
-  :defer t)
+  :defer t
+  :config
+  ; already taken by goto-last-chg
+  (unbind-key "C-." php-mode-map))
 
 
 ;;
