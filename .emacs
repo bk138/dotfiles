@@ -30,6 +30,7 @@
   :config
   (setq centaur-tabs-set-icons t)
   (setq centaur-tabs-gray-out-icons 'buffer)
+  (centaur-tabs-group-by-projectile-project)
   (centaur-tabs-mode t)
   :bind
   ("C-<prior>" . centaur-tabs-backward)
