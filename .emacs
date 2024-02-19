@@ -28,7 +28,6 @@
 (use-package centaur-tabs
   :demand
   :config
-  (centaur-tabs-headline-match)
   (setq centaur-tabs-set-icons t)
   (setq centaur-tabs-gray-out-icons 'buffer)
   (centaur-tabs-mode t)
@@ -89,7 +88,11 @@
 		      (eval-after-load 'markdown-mode
 			'(progn
 			   (set-face-attribute 'markdown-markup-face nil :foreground "#ff6655")))
-		      ))))
+		      ))
+                ;; make selected centaur tab have same background as header line
+                (set-face-background 'centaur-tabs-selected (face-attribute 'header-line :background nil 'default))
+                (set-face-background 'centaur-tabs-selected-modified (face-attribute 'header-line :background nil 'default))
+                ))
   (circadian-setup))
 
 
