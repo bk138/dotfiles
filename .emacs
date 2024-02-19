@@ -557,7 +557,6 @@
   :hook (lsp-mode . lsp-enable-which-key-integration)
   :config
   (setq lsp-prefer-flymake nil)
-  (setq lsp-headerline-breadcrumb-enable nil) ;; we have lsp-treemacs for this
   (setq lsp-file-watch-threshold nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq gc-cons-threshold 100000000)
