@@ -75,7 +75,9 @@
 		      (message "adapting for doom-acario-light")
 		      ;; reset to default
 		      (setq lsp-diagnostics-attributes '((unnecessary :foreground "dim gray")(deprecated :strike-through t)))
-		      ))
+                      ;; brighter header line
+                      (set-face-background 'header-line "gray80")
+                      ))
 		(if (string-equal theme "doom-zenburn")
 		    (progn
 		      (message "adapting for doom-zenburn")
