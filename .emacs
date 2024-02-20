@@ -29,6 +29,7 @@
   :demand
   :config
   (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-plain-icons t)
   (setq centaur-tabs-gray-out-icons 'buffer)
   (centaur-tabs-group-by-projectile-project)
   (centaur-tabs-mode t)
