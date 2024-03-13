@@ -683,6 +683,7 @@
 ;; PHP
 ;;
 (use-package php-mode
+  :mode "\\.php\\'"
   :defer t
   :config
   ; already taken by goto-last-chg
