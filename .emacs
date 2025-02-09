@@ -576,7 +576,7 @@
       (when (derived-mode-p 'c-mode) (setq lsp-enable-indentation nil))
       (when (derived-mode-p 'sh-mode) (eldoc-mode -1))))
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
-  (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (projectile-save-project-buffers)))
+  (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (save-buffer)))
   )
 
 (use-package posframe) ; for dap-ui-controls
