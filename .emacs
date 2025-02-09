@@ -577,7 +577,6 @@
       (when (derived-mode-p 'sh-mode) (eldoc-mode -1))))
   (add-hook 'lsp-after-initialize-hook 'after-lsp)
   (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (projectile-save-project-buffers)))
-  :bind ("C-c r" . lsp-rename)
   )
 
 (use-package posframe) ; for dap-ui-controls
